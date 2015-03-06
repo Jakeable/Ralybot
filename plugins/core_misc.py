@@ -27,7 +27,7 @@ def onjoin(conn, bot):
     :type conn: cloudbot.clients.clients.IrcClient
     :type bot: cloudbot.bot.CloudBot
     """
-    bot.logger.info("[{}|misc] The bot is sending join commands for network.".format(conn.name))
+    bot.logger.info("[{}|misc] The bot is sending join commands for the network.".format(conn.name))
     nickserv = conn.config.get('nickserv')
     if nickserv and nickserv.get("enabled", True):
         bot.logger.info("[{}|misc] The bot is authenticating with NickServ.".format(conn.name))
