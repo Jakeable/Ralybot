@@ -27,10 +27,10 @@ def onjoin(conn, bot):
     :type conn: cloudbot.clients.clients.IrcClient
     :type bot: cloudbot.bot.CloudBot
     """
-    bot.logger.info("[{}|misc] Bot is sending join commands for network.".format(conn.name))
+    bot.logger.info("[{}|misc] The bot is sending join commands for network.".format(conn.name))
     nickserv = conn.config.get('nickserv')
     if nickserv and nickserv.get("enabled", True):
-        bot.logger.info("[{}|misc] Bot is authenticating with NickServ.".format(conn.name))
+        bot.logger.info("[{}|misc] The bot is authenticating with NickServ.".format(conn.name))
         nickserv_password = nickserv.get('nickserv_password', '')
         nickserv_name = nickserv.get('nickserv_name', 'nickserv')
         nickserv_account_name = nickserv.get('nickserv_user', '')
@@ -50,17 +50,17 @@ def onjoin(conn, bot):
     # Set bot modes
     mode = conn.config.get('mode')
     if mode:
-        bot.logger.info("[{}|misc] Bot is setting mode on itself: {}".format(conn.name, mode))
+        bot.logger.info("[{}|misc] The bot is setting mode on itself: {}".format(conn.name, mode))
         conn.cmd('MODE', conn.nick, mode)
 
     # Join config-defined channels
-    bot.logger.info("[{}|misc] Bot is joining channels for network.".format(conn.name))
+    bot.logger.info("[{}|misc] The bot is joining the channels for the network.".format(conn.name))
     for channel in conn.channels:
         conn.join(channel)
         yield from asyncio.sleep(0.4)
 
     conn.ready = True
-    bot.logger.info("[{}|misc] Bot has finished sending the join commands for the network.".format(conn.name))
+    bot.logger.info("[{}|misc] The bot has finished sending the join commands for the network.".format(conn.name))
 
 
 @asyncio.coroutine
