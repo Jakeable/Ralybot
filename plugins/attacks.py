@@ -32,7 +32,7 @@ def load_attacks(bot):
     """
     :type bot: cloudbot.bot.CloudBot
     """
-    global larts, flirts, kills, slaps
+    global larts, flirts, kills, slaps, wrecks
 
     with codecs.open(os.path.join(bot.data_dir, "larts.txt"), encoding="utf-8") as f:
         larts = [line.strip() for line in f.readlines() if not line.startswith("//")]
@@ -46,6 +46,9 @@ def load_attacks(bot):
     with codecs.open(os.path.join(bot.data_dir, "slaps.json"), encoding="utf-8") as f:
         slaps = json.load(f)
 
+    with codecs.open(os.path.join(bot.data_dir, "wreck.json"), encoding="utf-8") as f:
+        wrecks = json.load(f)
+
 
 @asyncio.coroutine
 @hook.command
@@ -54,10 +57,12 @@ def lart(text, conn, nick, action):
     target = text.strip()
 
     if not is_valid(target):
-        return "I can't attack that."
+        return "I can't attack that, since it's not a valid target. " \
+         "Please choose a valid target for me to lart!"
 
     if is_self(conn, target):
-        # user is trying to make the bot attack itself!
+        # When the user is trying to make the bot attack itself, make the
+        # bot attack the user who is doing the command.
         target = nick
 
     phrase = random.choice(larts)
@@ -73,10 +78,12 @@ def flirt(text, conn, nick, message):
     target = text.strip()
 
     if not is_valid(target):
-        return "I can't attack that."
+        return "I can't flirt with that, since it's not a valid target. " \
+         "Please choose a valid target for me to flirt with!"
 
     if is_self(conn, target):
-        # user is trying to make the bot attack itself!
+        # When the user is trying to make the bot attack itself, make the
+        # bot attack the user who is doing the command.
         target = nick
 
     message('{}, {}'.format(target, random.choice(flirts)))
@@ -89,10 +96,12 @@ def kill(text, conn, nick, action):
     target = text.strip()
 
     if not is_valid(target):
-        return "I can't attack that."
+        return "I can't attack that, since it's not a valid target. " \
+         "Please choose a valid target for me to kill!"
 
     if is_self(conn, target):
-        # user is trying to make the bot attack itself!
+        # When the user is trying to make the bot attack itself, make the
+        # bot attack the user who is doing the command.
         target = nick
 
     generator = textgen.TextGenerator(kills["templates"], kills["parts"], variables={"user": target})
@@ -108,10 +117,12 @@ def slap(text, action, nick, conn, notice):
     target = text.strip()
 
     if not is_valid(target):
-        return "I can't attack that."
+        return "I can't slap that, since it's not a valid target. " \
+         "Please choose a valid target for me to slap!"
 
     if is_self(conn, target):
-        # user is trying to make the bot attack itself!
+        # When the user is trying to make the bot attack itself, make the
+        # bot attack the user who is doing the command.
         target = nick
 
     variables = {
@@ -119,5 +130,25 @@ def slap(text, action, nick, conn, notice):
     }
     generator = textgen.TextGenerator(slaps["templates"], slaps["parts"], variables=variables)
 
-    # act out the message
+    # Act out the message.
+    action(generator.generate_string())
+
+@asyncio.coroutine
+@hook.command
+def wreck(text, conn, nick, action):
+    """<user> - Makes the bot wreck <user>."""
+    target = text.strip()
+
+    if not is_valid(target):
+         return "I can't wreck that, since it's not a valid target. " \
+         "Please choose a valid target for me to wreck!"
+
+    if is_self(conn, target):
+        # When the user is trying to make the bot attack itself, make the
+        # bot attack the user who is doing the command.
+        target = nick
+
+    generator = textgen.TextGenerator(wrecks["templates"], wrecks["parts"], variables={"user": target})
+
+    # Act out the message.
     action(generator.generate_string())

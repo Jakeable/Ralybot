@@ -53,13 +53,13 @@ def lastfm(text, nick, db, bot, notice):
         # if the user is listening to something, the tracks entry is a list
         # the first item is the current track
         track = tracks[0]
-        status = 'is listening to'
+        status = 'is listening to the song'
         ending = '.'
     elif type(tracks) == dict:
         # otherwise, they aren't listening to anything right now, and
         # the tracks entry is a dict representing the most recent track
         track = tracks
-        status = 'last listened to'
+        status = 'last listened to the song'
         # lets see how long ago they listened to it
         time_listened = datetime.fromtimestamp(int(track["date"]["uts"]))
         time_since = timeformat.time_since(time_listened)

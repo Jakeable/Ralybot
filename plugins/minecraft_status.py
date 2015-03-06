@@ -45,5 +45,15 @@ def mcstatus():
         red.sort()
         out += "\x034\x02Offline\x02\x0f: " + ", ".join(red)
 
-    return "\x0f" + out.replace(".mojang.com", ".mj") \
-        .replace(".minecraft.net", ".mc")
+    return "\x0f" + out.replace(".mojang.com", "") \
+        .replace(".minecraft.net", "") \
+        .replace("account", "Mojang Accounts") \
+        .replace("api", "API") \
+        .replace("sessionserver", "Sessions") \
+        .replace("session", "Legacy Sessions") \
+        .replace("authserver", "Auth Server") \
+        .replace("auth", "Auth") \
+        .replace("minecraft.net", "Website") \
+        .replace("skins", "Skins Server") \
+        .replace("textures", "Textures Server")
+

@@ -13,12 +13,12 @@ import cloudbot
 @hook.command(autohelp=False)
 def about(text, conn):
     """-- Gives information about CloudBot. Use .about license for licensing information"""
-    if text.lower() in ("license", "gpl", "source"):
-        return "CloudBot Refresh is released under the GPL v3 license, get the source code " \
-               "at https://github.com/CloudBotIRC/CloudBot/"
+    if text.lower() in ("license", "gpl", "source", "src"):
+        return "Ralybot, a fork of CloudBot Refresh, is released under the GPL v3 license, get the source code " \
+               "at https://github.com/CloudBotIRC/CloudBot."
 
-    return "{} is powered by CloudBot Refresh! ({}) - " \
-           "https://github.com/CloudBotIRC/CloudBot/".format(conn.nick, cloudbot.__version__)
+    return "{} is a fork of CloudBot Refresh (https://github.com/CloudBotIRC/CloudBot), another awesome IRC bot written in the Python programming language. " \
+           "https://github.com/KamranMackey/Ralybot" .format(conn.nick)
 
 
 @hook.command(autohelp=False)

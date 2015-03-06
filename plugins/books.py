@@ -19,12 +19,11 @@ def books(text):
     if not dev_key:
         return "This command requires a Google Developers Console API key."
 
-    json = requests.get(book_search_api, params={"q": text, "key": dev_key, "country": "US"}).json()
+    json = requests.get(book_search_api, params={"q": text, "key": dev_key}).json()
 
     if json.get('error'):
         if json['error']['code'] == 403:
-            print(json['error']['message'])
-            return "The Books API is off in the Google Developers Console (or check the console)."
+            return "The Books API is off in the Google Developers Console."
         else:
             return 'Error performing search.'
 

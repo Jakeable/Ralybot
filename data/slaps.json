@@ -13,7 +13,8 @@
       "picks up a {item} and {hits} {user} with it.",
       "ties {user} to a chair and {throws} a {item} at them.",
       "{hits} {user} {where} with a {item}.",
-      "ties {user} to a pole and whips them with a {item}."
+      "ties {user} to a pole and whips them with a {item}.",
+      "slaps {user} with a large peanut butter & jelly sandwich."
    ],
    "parts": {
       "item":[

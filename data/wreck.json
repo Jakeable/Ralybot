@@ -1,0 +1,35 @@
+{
+    "templates": [
+        "rips out {user}'s intestine and uses it as a jumping rope.",
+        "rips {user}'s throat open and summons [CENSORED] with their blood.",
+        "offers {user}'s body to Cthulhu.",
+        "makes {user} sniff old sport socks.",
+        "beheads {user} with a {weapon} and uses their head to play {ball_game}.",
+        "stabs {user}'s butt multiple times with a {weapon}.",
+        "makes {user} play E.T.: The Video Game.",
+        "stuffs {user} with C4 and blows them up with a big *KABOOOM*.",
+        "dips {user} into lava head first.",
+        "makes {user} write web applications in Assembly.",
+        "puts {user} into the microwave and sets the timer to 10 hours.",
+        "feeds {user} to a giant bear.",
+        "shoots {user} multiple times in the face with an {gun}."
+    ],
+    "parts": {
+        "weapon": [
+            "rusty scythe",
+            "golden dagger",
+            "glass shard"
+        ],
+        "ball_game": [
+            "baseball",
+            "football",
+            "soccer",
+            "tennis"
+        ],
+        "gun": [
+          "AK47",
+          "Shotgun",
+          "Anti-Material Rifle"
+        ]
+    }
+}

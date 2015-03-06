@@ -1,8 +1,6 @@
 import re
-
 import requests
 from lxml import html
-
 from cloudbot import hook
 from cloudbot.util import formatting
 
@@ -12,7 +10,7 @@ mc_url = "http://minecraft.gamepedia.com/"
 
 @hook.command()
 def mcwiki(text):
-    """mcwiki <phrase> - gets the first paragraph of the Minecraft Wiki article on <phrase>"""
+    """mcwiki <phrase> - gets the first paragraph of the Minecraft Wiki article on <phrase>."""
 
     try:
         request = requests.get(api_url, params={'search': text.strip()})

@@ -60,7 +60,7 @@ def onjoin(conn, bot):
         yield from asyncio.sleep(0.4)
 
     conn.ready = True
-    bot.logger.info("[{}|misc] Bot has finished sending join commands for network.".format(conn.name))
+    bot.logger.info("[{}|misc] Bot has finished sending the join commands for the network.".format(conn.name))
 
 
 @asyncio.coroutine

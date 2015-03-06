@@ -1,8 +1,8 @@
 import sys
 
 # check python version
-if sys.version_info < (3, 4, 0):
-    print("CloudBot requires Python 3.4 or newer.")
+if sys.version_info < (3, 4, 2):
+    print("Ralybot requires Python 3.4.2 or newer to run.")
     sys.exit(1)
 
 import json
@@ -10,7 +10,7 @@ import logging.config
 import logging
 import os
 
-__version__ = "1.0.8_dev"
+__version__ = "1.0.9-unstable"
 
 __all__ = ["util", "bot", "connection", "config", "permissions", "plugin", "event", "hook", "log_dir"]
 
