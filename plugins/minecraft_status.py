@@ -54,6 +54,6 @@ def mcstatus():
         .replace("authserver", "Auth Server") \
         .replace("auth", "Auth") \
         .replace("minecraft.net", "Website") \
-        .replace("skins", "Skins Server") \
-        .replace("textures", "Textures Server")
+        .replace("skins", "Skins") \
+        .replace("textures", "Textures")
 
