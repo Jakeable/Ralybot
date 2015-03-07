@@ -65,4 +65,4 @@ def help_command(text, conn, bot, notice, has_permission):
 
         for line in lines:
             notice(line)
-        notice("For detailed help, use {}help <command>, without the brackets.".format(conn.config["command_prefix"]))
+        notice("For more detailed information on a certain command, use {}help <command>, without the brackets.".format(conn.config["command_prefix"]))
