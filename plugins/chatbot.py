@@ -17,6 +17,6 @@ def ask(text):
             answer = session.ask(text)
             attempt += 1
     except urllib.error.HTTPError:
-        return "Could not get response. Cleverbot is angry :("
+        return "Could not get response. Cleverbot is angry. :("
 
     return answer
