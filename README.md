@@ -56,26 +56,28 @@ You can find a number of example bots in [#Ralybot](irc://irc.esper.net/Ralybot 
 
 See [CHANGELOG.md](https://github.com/KamranMackey/Ralybot/blob/master/CHANGELOG.md)
 
-CloudBot is **licensed** under the **GPL v3** license. The terms are as follows.
+## License
+
+Ralybot is **licensed** under the **GPL v3** license. The terms are as follows.
 
 ![GPL V3](https://www.gnu.org/graphics/gplv3-127x51.png)
     
-    CloudBot
+    Ralybot - a fork of CloudBot
 
-    Copyright © 2011-2015 Luke Rogers / CloudBot Project
+    Copyright © 2015 Kamran Mackey / Ralybot Team
 
-    CloudBot is free software: you can redistribute it and/or modify
+    Ralybot is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation, either version 3 of the License, or
     (at your option) any later version.
 
-    CloudBot is distributed in the hope that it will be useful,
+    Ralybot is distributed in the hope that it will be useful,
     but WITHOUT ANY WARRANTY; without even the implied warranty of
     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
     GNU General Public License for more details.
 
     You should have received a copy of the GNU General Public License
-    along with CloudBot.  If not, see <http://www.gnu.org/licenses/>.
+    along with Ralybot. If not, see <http://www.gnu.org/licenses/>.
     
 This product includes GeoLite2 data created by MaxMind, available from
 <a href="http://www.maxmind.com">http://www.maxmind.com</a>. GeoLite2 databases are distributed under the [Creative Commons Attribution-ShareAlike 3.0 Unported License](https://creativecommons.org/licenses/by-sa/3.0/)
