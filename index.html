@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="Ralybot : Welcome to the official repository for Ralybot. Ralybot is a fork of CloudBot Refresh, another awesome IRC bot written in the Python programming language.">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Ralybot</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/KamranMackey/Ralybot">View on GitHub</a>
+
+          <h1 id="project_title">Ralybot</h1>
+          <h2 id="project_tagline">Welcome to the official repository for Ralybot. Ralybot is a fork of CloudBot Refresh, another awesome IRC bot written in the Python programming language.</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/KamranMackey/Ralybot/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/KamranMackey/Ralybot/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>
+<a id="ralybot" class="anchor" href="#ralybot" aria-hidden="true"><span class="octicon octicon-link"></span></a>Ralybot</h1>
+
+<p>Ralybot is a simple, fast, expandable open-source Python IRC bot, and is a fork of another awesome bot called CloudBot.</p>
+
+<h2>
+<a id="getting-ralybot" class="anchor" href="#getting-ralybot" aria-hidden="true"><span class="octicon octicon-link"></span></a>Getting Ralybot</h2>
+
+<p>There are currently two different branches of this repository, each with a different level of stability:</p>
+
+<ul>
+<li>
+<strong>python3.4</strong> <em>(main, but unstable!)</em>: This branch is the main branch in the repository, but might contain unstable, untested code. You have been warned!</li>
+</ul>
+
+<h2>
+<a id="installing-ralybot" class="anchor" href="#installing-ralybot" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installing Ralybot</h2>
+
+<p>Firstly, Ralybot will only run on <strong>Python 3.4.3 or higher</strong>. Because we use the asyncio module, you will not be able to use any other versions of Python.</p>
+
+<p>To install Ralybot on *nix (linux, etc), see <a href="https://github.com/CloudBotIRC/CloudBot/wiki/Installing-on-*nix">here</a></p>
+
+<p>To install Ralybot on Windows, see <a href="https://github.com/CloudBotIRC/CloudBot/wiki/Installing-on-Windows">here</a></p>
+
+<h3>
+<a id="running-ralybot" class="anchor" href="#running-ralybot" aria-hidden="true"><span class="octicon octicon-link"></span></a>Running Ralybot</h3>
+
+<p>Before you run the bot, rename <code>config.default.json</code> to <code>config.json</code> and edit it with your preferred settings. You can check if your JSON is valid using <a href="http://jsonlint.com/">jsonlint.com</a>!</p>
+
+<p>Once you have installed the required dependencies and renamed the config file, you can run the bot! Make sure you are in the correct folder and run the following command:</p>
+
+<pre><code>python3.4 -m Ralybot
+</code></pre>
+
+<p>Note that you can also run the <code>cloudbot/__main__.py</code> file directly, which will work from any directory.</p>
+
+<pre><code>python3.4 Ralybot/cloudbot/__main__.py
+</code></pre>
+
+<p>Specify the path as /path/to/repository/cloudbot/<strong>main</strong>.py, where <code>cloudbot</code> is inside the repository directory.</p>
+
+<h2>
+<a id="getting-help-with-ralybot" class="anchor" href="#getting-help-with-ralybot" aria-hidden="true"><span class="octicon octicon-link"></span></a>Getting help with Ralybot</h2>
+
+<h3>
+<a id="documentation" class="anchor" href="#documentation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Documentation</h3>
+
+<p>The Ralybot documentation is currently somewhat outdated and may not be correct. If you need any help, please visit our IRC channel and we will be happy to assist you.</p>
+
+<p>To write your own plugins, visit the <a href="https://github.com/CloudBotIRC/CloudBotRefresh/wiki/Writing-Refresh-Modules">Plugins Wiki Page</a>.</p>
+
+<p>More at the <a href="https://github.com/CloudBotIRC/CloudBotRefresh/wiki">Wiki Main Page</a>.</p>
+
+<h3>
+<a id="support" class="anchor" href="#support" aria-hidden="true"><span class="octicon octicon-link"></span></a>Support</h3>
+
+<p>The developers reside in #Ralybott on the <a href="http://esper.net">EsperNet</a> IRC network, and would be glad to help you.</p>
+
+<p>If you think you have found a bug/have a idea/suggestion, please <strong>open a issue</strong> here on Github and contact us on IRC!</p>
+
+<h2>
+<a id="example-ralybots" class="anchor" href="#example-ralybots" aria-hidden="true"><span class="octicon octicon-link"></span></a>Example Ralybots</h2>
+
+<p>You can find a number of example bots in #Ralybot.</p>
+
+<h2>
+<a id="changelog" class="anchor" href="#changelog" aria-hidden="true"><span class="octicon octicon-link"></span></a>Changelog</h2>
+
+<p>See <a href="https://github.com/KamranMackey/Ralybot/blob/master/CHANGELOG.md">CHANGELOG.md</a></p>
+
+<h2>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span class="octicon octicon-link"></span></a>License</h2>
+
+<p>Ralybot is <strong>licensed</strong> under the <strong>GPL v3</strong> license. The terms are as follows.</p>
+
+<p><img src="https://www.gnu.org/graphics/gplv3-127x51.png" alt="GPL V3"></p>
+
+<pre><code>Ralybot - a fork of CloudBot
+
+Copyright © 2015 Kamran Mackey / Ralybot Team
+
+Ralybot is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+Ralybot is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with Ralybot. If not, see &lt;http://www.gnu.org/licenses/&gt;.
+</code></pre>
+
+<p>This product includes GeoLite2 data created by MaxMind, available from
+<a href="http://www.maxmind.com"></a><a href="http://www.maxmind.com">http://www.maxmind.com</a>. GeoLite2 databases are distributed under the <a href="https://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 Unported License</a></p>
+
+<p><img src="https://www.wordnik.com/img/wordnik_badge_a1.png" alt="Powered by wordnik"></p>
+
+<p>This product uses data from <a href="http://wordnik.com"></a><a href="http://wordnik.com">http://wordnik.com</a> in accordance with the wordnik.com API <a href="http://developer.wordnik.com/#!/terms">terms of service</a>.</p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Ralybot maintained by <a href="https://github.com/KamranMackey">KamranMackey</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
