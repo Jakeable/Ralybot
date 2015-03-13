@@ -62,7 +62,7 @@ Ralybot is **licensed** under the **GPL v3** license. The terms are as follows.
 
 ![GPL V3](https://www.gnu.org/graphics/gplv3-127x51.png)
     
-    Ralybot - a fork of CloudBot
+    Ralybot
     
     Copyright © 2011-2014 Luke Rogers and CloudBot Contributors
     Copyright © 2015 Ralybot Team
