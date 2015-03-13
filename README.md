@@ -1,6 +1,6 @@
 # Ralybot
 
-Ralybot is a simple, fast, expandable open-source Python IRC bot, and is a fork of another awesome bot called CloudBot.
+Ralybot is a simple, fast, expandable open-source Python IRC bot, and is a fork of another awesome bot called [CloudBot](https://github.com/CloudBotIRC/CloudBot/).
 
 ## Getting Ralybot
 
