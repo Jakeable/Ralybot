@@ -8,14 +8,17 @@ Admin-only Commands
 -------
 |Command Name| Description |
 |:------:|:--------------------------------------:|
-|'ignore | Ignores the specified user. This stops the bot from responding to the ignored user's input.|
 |'ban | Bans the specified user. Requires the bot to be opped. |
+|'fushlog | Flushes the bot's log file. |
 |'unban | Unbans the specified user. Requires the bot to be opped. |
+|'stop | Stops the bot. |
+|'restart | Restarts the bot. |
 
 Moderator Commands
 -------
 |Command Name | Description |
 |:------:|:--------------------------------------:|
+|'ignore | Ignores the specified user. This stops the bot from responding to the ignored user's input.|
 |'remember | Remembers "data" with "word" - add + to "data" to append |
 |'forget | Forgets previously remembered "word". |
 
@@ -30,3 +33,4 @@ User Commands
 |'cake | Gives the specified user a cake! |
 |'potato | Gives the specified user a potato. |
 |'youtube | Returns the first YouTube search result for the specified video. |
+|'wiki | Searches Wikipedia for a specified article, such as YouTube.
