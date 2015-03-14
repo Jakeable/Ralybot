@@ -9,7 +9,7 @@ Admin-only Commands
 |Command Name| Description |
 |:------:|:--------------------------------------:|
 |'ban | Bans the specified user. Requires the bot to be opped. |
-|'fushlog | Flushes the bot's log file. |
+|'flushlog | Flushes the bot's log file. |
 |'unban | Unbans the specified user. Requires the bot to be opped. |
 |'stop | Stops the bot. |
 |'restart | Restarts the bot. |
