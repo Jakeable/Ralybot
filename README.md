@@ -64,7 +64,7 @@ Ralybot is **licensed** under the **GPL v3** license. The terms are as follows.
     
     Ralybot
     
-    Copyright © 2011-2015 Luke Rogers and CloudBot Contributors
+    Copyright © 2011-2015 Luke Rogers / CloudBot Project
     Copyright © 2015 Ralybot Team
 
     Ralybot is free software: you can redistribute it and/or modify
