@@ -1,6 +1,6 @@
 # Ralybot
 
-Ralybot is a simple, fast, expandable open-source Python IRC bot, and is a fork of another awesome bot called CloudBot.
+Ralybot is a simple, fast, expandable open-source Python IRC bot, and is a fork of another awesome bot called [CloudBot](https://github.com/CloudBotIRC/CloudBot/).
 
 ## Getting Ralybot
 
@@ -61,10 +61,11 @@ See [CHANGELOG.md](https://github.com/KamranMackey/Ralybot/blob/master/CHANGELOG
 Ralybot is **licensed** under the **GPL v3** license. The terms are as follows.
 
 ![GPL V3](https://www.gnu.org/graphics/gplv3-127x51.png)
-    
-    Ralybot - a fork of CloudBot
 
-    Copyright © 2015 Kamran Mackey / Ralybot Team
+    Ralybot
+
+    Copyright © 2011-2015 Luke Rogers / CloudBot Project
+    Copyright © 2015 Ralybot Team
 
     Ralybot is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -78,7 +79,7 @@ Ralybot is **licensed** under the **GPL v3** license. The terms are as follows.
 
     You should have received a copy of the GNU General Public License
     along with Ralybot. If not, see <http://www.gnu.org/licenses/>.
-    
+
 This product includes GeoLite2 data created by MaxMind, available from
 <a href="http://www.maxmind.com">http://www.maxmind.com</a>. GeoLite2 databases are distributed under the [Creative Commons Attribution-ShareAlike 3.0 Unported License](https://creativecommons.org/licenses/by-sa/3.0/)
 

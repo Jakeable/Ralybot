@@ -9,12 +9,12 @@ from cloudbot.util import timeformat, web
 api_url = "http://ws.audioscrobbler.com/2.0/?format=json"
 
 
-@hook.command("lastfm", "np", "l", "last", autohelp=False)
+@hook.command("lastfm", "nowplaying", "l", "last", "lfm", autohelp=False)
 def lastfm(text, nick, db, bot, notice):
     """[user] [dontsave] - displays the now playing (or last played) track of LastFM user [user]"""
     api_key = bot.config.get("api_keys", {}).get("lastfm")
     if not api_key:
-        return "No last.fm API key set."
+        return "Error: No last.fm API key has been set."
 
     # check if the user asked us not to save his details
     dontsave = text.endswith(" dontsave")
@@ -55,7 +55,7 @@ def lastfm(text, nick, db, bot, notice):
         # the first item is the current track
         track = tracks[0]
         status = 'is listening to the song'
-        ending = '.'
+        ending = ''
     elif type(tracks) == dict:
         # otherwise, they aren't listening to anything right now, and
         # the tracks entry is a dict representing the most recent track
@@ -78,7 +78,7 @@ def lastfm(text, nick, db, bot, notice):
     if artist:
         out += " by \x02{}\x0f".format(artist)
     if album:
-        out += " from the album \x02{}\x0f".format(album)
+        out += " from the album \x02{}\x0f -".format(album)
     if url:
         out += " {}".format(url)
 
@@ -98,7 +98,7 @@ def lastfmcompare(text, nick, bot, db):
     """[user] ([user] optional) - displays the now playing (or last played) track of LastFM user [user]"""
     api_key = bot.config.get("api_keys", {}).get("lastfm")
     if not api_key:
-        return "No last.fm API key set."
+        return "Error: No last.fm API key has been set."
     if not text:
         return("Please specify a last.fm username to compare.")
     try:
@@ -135,30 +135,31 @@ def lastfmcompare(text, nick, bot, db):
         return "Error: {}.".format(data["message"])
 
     score = float(
-        format(float(data["comparison"]["result"]["score"]) * 100, '.3f'))
+        format(float(data["comparison"]["result"]["score"]) * 100, '.1f'))
     if score == 0:
         return "{} and {} have no common listening history.".format(user2, user1)
     level = "Super" if score > 95 else "Very High" if score > 80 else "High" if score > 60 else \
             "Medium" if score > 40 else "Low" if score > 10 else "Very Low"
 
     # I'm not even going to try to rewrite this line
-    artists = [f["name"] for f in data["comparison"]["result"]["artists"]["artist"]] if \
-        type(data["comparison"]["result"]["artists"]["artist"]) == list else \
-        [data["comparison"]["result"]["artists"]["artist"]["name"]] if "artist" \
-        in data["comparison"]["result"]["artists"] else ""
-    artist_string = "\x02In Common:\x02 " + \
-        ", ".join(artists) if artists else ""
+    _artists = data["comparison"]["result"]["artists"]
+    if type(_artists["artist"]) == list:
+        artists = [f["name"] for f in _artists["artist"]]
+    elif "artist" in _artists:
+        artists = [_artists["artist"]["name"]]
+    else:
+        artists = ""
 
     return "Musical compatibility between \x02{}\x02 and \x02{}\x02: {} (\x02{}%\x02) {}".format(user1, user2, level,
                                                                                                  score, artist_string)
 
 
-@hook.command("ltop", "ltt", autohelp=False)
+@hook.command("ltop", "ltt", "toptrack", autohelp=False)
 def toptrack(text, nick, db, bot, notice):
-    """Grabs a list of the top tracks for a last.fm username"""
+    """-- Grabs a list of the top tracks for a last.fm username."""
     api_key = bot.config.get("api_keys", {}).get("lastfm")
     if not api_key:
-        return "error: no api key set"
+        return "Error: No last.fm API key has been set."
 
     if text:
         username = db.execute(
@@ -178,7 +179,7 @@ def toptrack(text, nick, db, bot, notice):
         'api_key': api_key,
         'method': 'user.gettoptracks',
         'user': username,
-        'limit': 5
+        'limit': 10
     }
     request = requests.get(api_url, params=params)
 
@@ -201,7 +202,7 @@ def topartists(text, nick, db, bot, notice):
     """Grabs a list of the top artists for a last.fm username. You can set your lastfm username with .l username"""
     api_key = bot.config.get("api_keys", {}).get("lastfm")
     if not api_key:
-        return "error: no api key set"
+        return "Error: No last.fm API key has been set."
 
     if text:
         username = db.execute(
@@ -244,7 +245,7 @@ def lastfm_track(text, nick, db, bot, notice):
     """Grabs a list of the top tracks for a last.fm username"""
     api_key = bot.config.get("api_keys", {}).get("lastfm")
     if not api_key:
-        return "error: no api key set"
+        return "Error: No last.fm API key has been set."
     artist = ""
     track = ""
     if text:
@@ -310,7 +311,7 @@ def lastfm_artist(text, nick, db, bot, notice):
     """<artist> prints information about the specified artist"""
     api_key = bot.config.get("api_keys", {}).get("lastfm")
     if not api_key:
-        return "error: no api key set"
+        return "Error: No last.fm API key has been set."
     artist = text
     params = ""
     if text:

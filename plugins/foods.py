@@ -8,7 +8,7 @@ import re
 from cloudbot import hook
 from cloudbot.util import textgen
 
-nick_re = re.compile("^[A-Za-z0-9_|.\-\]\[]*$", re.I)
+nick_re = re.compile("^[A-Za-z0-9_|.\-\]\[\{\}]*$", re.I)
 
 cakes = ['Chocolate', 'Ice Cream', 'Angel', 'Boston Cream', 'Birthday', 'Bundt', 'Carrot', 'Coffee', 'Devils', 'Fruit',
          'Gingerbread', 'Pound', 'Red Velvet', 'Stack', 'Welsh', 'Yokan']
@@ -123,7 +123,7 @@ def cookie(text, action):
     size = random.choice(['small', 'little', 'medium-sized', 'large', 'gigantic'])
     flavor = random.choice(['tasty', 'delectable', 'delicious', 'yummy', 'toothsome', 'scrumptious', 'luscious'])
     method = random.choice(['makes', 'gives', 'gets', 'buys'])
-    side_dish = random.choice(['glass of milk', 'bowl of ice cream', 'bowl of chocolate sauce'])
+    side_dish = random.choice(['glass of milk', 'bowl of ice cream', 'bowl of chocolate sauce', "bowl of jello"])
 
     action("{} {} a {} {} {} cookie and serves it with a {}!".format(method, user, flavor, size, cookie_type,
                                                                      side_dish))

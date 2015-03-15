@@ -8,7 +8,7 @@ import re
 from cloudbot import hook
 from cloudbot.util import textgen
 
-nick_re = re.compile("^[A-Za-z0-9_|.\-\]\[]*$", re.I)
+nick_re = re.compile("^[A-Za-z0-9_|.\-\]\[\{\}]*$", re.I)
 
 
 def is_valid(target):
@@ -32,7 +32,7 @@ def load_attacks(bot):
     """
     :type bot: cloudbot.bot.CloudBot
     """
-    global larts, flirts, kills, slaps, insults
+    global larts, flirts, kills, slaps, insults, wreck
 
     with codecs.open(os.path.join(bot.data_dir, "larts.txt"), encoding="utf-8") as f:
         larts = [line.strip() for line in f.readlines() if not line.startswith("//")]
@@ -50,7 +50,7 @@ def load_attacks(bot):
         slaps = json.load(f)
 
     with codecs.open(os.path.join(bot.data_dir, "wreck.json"), encoding="utf-8") as f:
-        wrecks = json.load(f)
+        wreck = json.load(f)
 
 
 @asyncio.coroutine
@@ -151,7 +151,7 @@ def wreck(text, conn, nick, action):
         # bot attack the user who is doing the command.
         target = nick
 
-    generator = textgen.TextGenerator(wrecks["templates"], wrecks["parts"], variables={"user": target})
+    generator = textgen.TextGenerator(wreck["templates"], wreck["parts"], variables={"user": target})
 
     # Act out the message.
     action(generator.generate_string())
@@ -170,7 +170,8 @@ def insult(text, conn, nick, notice, message):
         notice("Invalid username!")
         return
 
-    # if the user is trying to make the bot target itself, target them
+    # When the user is trying to make the bot attack itself, make the
+    # bot attack the user who is doing the command.
     if is_self(conn, target):
         target = nick
 
