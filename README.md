@@ -44,17 +44,13 @@ More at the [Wiki Main Page](https://github.com/CloudBotIRC/CloudBotRefresh/wiki
 
 ### Support
 
-The developers reside in [#Ralybott](irc://irc.esper.net/Ralybot) on the [EsperNet](http://esper.net) IRC network, and would be glad to help you.
+The developers reside in [#Ralybot](irc://irc.esper.net/Ralybot) on the [EsperNet](http://esper.net) IRC network, and would be glad to help you.
 
 If you think you have found a bug/have a idea/suggestion, please **open a issue** here on Github and contact us on IRC!
 
-## Example Ralybots
-
-You can find a number of example bots in [#Ralybot](irc://irc.esper.net/Ralybot "Connect via IRC to #Ralybot on irc.esper.net").
-
 ## Changelog
 
-See [CHANGELOG.md](https://github.com/KamranMackey/Ralybot/blob/master/CHANGELOG.md)
+See [CHANGELOG.md](https://github.com/KamranMackey/Ralybot/blob/master/CHANGELOG.md) for the changelog. WARNING: The changelog is not always updated and may be out of date with the current release version. You have been warned.
 
 ## License
 
