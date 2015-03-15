@@ -50,7 +50,7 @@ If you think you have found a bug/have a idea/suggestion, please **open a issue*
 
 ## Changelog
 
-See [CHANGELOG.md](https://github.com/KamranMackey/Ralybot/blob/master/CHANGELOG.md) for the changelog. WARNING: The changelog is not always updated and may be out of date with the current release version. You have been warned.
+See [CHANGELOG.md](https://github.com/KamranMackey/Ralybot/blob/master/CHANGELOG.md) for the changelog. **WARNING**: The changelog is not always updated and may be out of date with the current release version. You have been warned.
 
 ## License
 
