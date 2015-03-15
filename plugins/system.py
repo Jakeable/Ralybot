@@ -42,7 +42,7 @@ def system():
     uptime = timedelta(seconds=round(time.time() - process.create_time()))
 
     return (
-        "OS: \x02{}\x02, "
+        "Operating System: \x02{}\x02, "
         "Python: \x02{} {}\x02, "
         "Architecture: \x02{}\x02 (\x02{}\x02)\n"
         "Uptime: \x02{}\x02, "

@@ -89,8 +89,8 @@ def twitter(text):
             username, tweet_number = text.split()
             tweet_number = int(tweet_number) - 1
 
-        if tweet_number > 300:
-            return "This command can only find the last \x02300\x02 tweets."
+        if tweet_number > 200:
+            return "This command can only find the last \x02500\x02 tweets."
 
         try:
             # try to get user by username
@@ -113,7 +113,7 @@ def twitter(text):
             tweet = user_timeline[tweet_number]
         except IndexError:
             tweet_count = len(user_timeline)
-            return "The user \x02{}\x02 only has \x02{}\x02 tweets.".format(user.screen_name, tweet_count)
+            return "Thia user \x02{}\x02 only has \x02{}\x02 tweets.".format(user.screen_name, tweet_count)
 
     elif re.match(r'^#\w+$', text):
         # user is searching by hashtag
@@ -172,6 +172,7 @@ def twuser(text):
     else:
         desc_str = ""
 
-    return "{}@\x02{}\x02 ({}){} has \x02{:,}\x02 tweets and \x02{:,}\x02 followers.{}" \
+    return "{}@\x02{}\x02 ({}){} has \x02{:,}\x02 tweets, \x02{:,}\x02 followers.{}" \
            "".format(prefix, user.screen_name, user.name, loc_str, user.statuses_count, user.followers_count,
-                     desc_str)
+                    desc_str)
+    
