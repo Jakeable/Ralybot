@@ -5,7 +5,7 @@ Ralybot is a simple, fast, expandable open-source Python IRC bot, and is a fork 
 ## Getting Ralybot
 
 There are currently two different branches of this repository, each with a different level of stability:
- - **python3.4** *(main, but unstable!)*: This branch is the main branch in the repository, but might contain unstable, untested code. You have been warned!
+ - **python3.4** *(main, but unstable!)*: This branch is the main branch in the repository, but might contain unstable, untested code. You have been warned! [![Build Status](https://travis-ci.org/KamranMackey/Ralybot.svg?branch=python3.4)](https://travis-ci.org/KamranMackey/Ralybot)
 
 ## Installing Ralybot
 
