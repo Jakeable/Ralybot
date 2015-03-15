@@ -113,7 +113,7 @@ def twitter(text):
             tweet = user_timeline[tweet_number]
         except IndexError:
             tweet_count = len(user_timeline)
-            return "The user \x02{}\x02 only has \x02{}\x02 tweets.".format(user.screen_name, tweet_count)
+            return "Thia user \x02{}\x02 only has \x02{}\x02 tweets.".format(user.screen_name, tweet_count)
 
     elif re.match(r'^#\w+$', text):
         # user is searching by hashtag
