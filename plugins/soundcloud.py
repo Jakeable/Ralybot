@@ -5,7 +5,7 @@ from cloudbot import hook
 from cloudbot.util import web, formatting, timeformat
 
 SC_RE = re.compile(r'(.*:)//(www.)?(soundcloud.com|snd.sc)(.*)', re.I)
-API_BASE = "http://api.soundcloud.com/{}/"
+API_BASE = 'http://api.soundcloud.com/{}/'
 
 
 class APIError(Exception):
@@ -126,6 +126,21 @@ def format_playlist(playlist, show_url=True):
         out += " - {}".format(web.try_shorten(playlist['permalink_url']))
     return out
 
+def format_group(group, show_url=True):
+    """
+    Takes a SoundCloud group and returns a formatting string.
+    """
+    out = "\x02{}\x02".format(group['name'])
+
+    if group['description']:
+        out += ': "{}"'.format(formatting.truncate(group['description']))
+
+    out += " - Owned by \x02{}\x02.".format(group['creator']['username'])
+
+    if show_url:
+        out += " - {}".format(web.try_shorten(group['permalink_url']))
+    return out
+
 
 # CLOUDBOT HOOKS
 @hook.on_start()
@@ -171,6 +186,24 @@ def soundcloud_user(text):
     except APIError as ae:
         return ae
 
+@hook.command("scgroup")
+def soundcloud_group(text):
+    """<query> -- Searches for groups on SoundCloud."""
+    if not api_key:
+        return "This command requires a SoundCloud API key."
+    try:
+        group = get_with_search('groups', text)
+    except APIError as ae:
+        return ae
+
+    if not group:
+        return "No results found."
+
+    try:
+        return format_group(group)
+    except APIError as ae:
+        return ae
+
 
 @hook.regex(SC_RE)
 def soundcloud_url(match):
@@ -190,3 +223,5 @@ def soundcloud_url(match):
         return format_user(item, show_url=False)
     elif item['kind'] == 'playlist':
         return format_playlist(item, show_url=False)
+    elif item['kind'] == 'group':
+        return format_group(item, show_url=False)
