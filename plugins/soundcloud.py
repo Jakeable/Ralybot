@@ -5,6 +5,7 @@ from cloudbot import hook
 from cloudbot.util import web, formatting, timeformat
 
 SC_RE = re.compile(r'(.*:)//(www.)?(soundcloud.com|snd.sc)(.*)', re.I)
+SCGROUP_RE = re.compile(r'(.*:)//(www.)?(soundcloud.com/group)(.*)', re.I)
 API_BASE = 'http://api.soundcloud.com/{}/'
 
 
@@ -84,7 +85,7 @@ def format_user(user, show_url=True):
     out = "\x02{}\x02".format(user['username'])
 
     if user['description']:
-        out += ': "{}"'.format(user['description'])
+        out += ': "{}"'.format(formatting.truncate(user['description']))
 
     if user['city']:
         out += ': {}'.format(user['city'])
@@ -112,15 +113,19 @@ def format_playlist(playlist, show_url=True):
     if playlist['genre']:
         out += " - \x02{}\x02".format(playlist['genre'])
 
-    out += " - by \x02{}\x02".format(playlist['user']['username'])
+    out += " - by \x02{}\x02.".format(playlist['user']['username'])
+
+
 
     if not playlist['tracks']:
         out += " - No items"
     else:
-        out += " - {} items,".format(len(playlist['tracks']))
+        out += " - {} items.".format(len(playlist['tracks']))
 
         seconds = round(int(playlist['duration'])/1000)
-        out += " {}".format(timeformat.format_time(seconds, simple=True))
+        out += " Running Time: {}.".format(timeformat.format_time(seconds, simple=True))
+
+        out += " Playlist Type: \x02{}\x02.".format(playlist['type'])
 
     if show_url:
         out += " - {}".format(web.try_shorten(playlist['permalink_url']))
@@ -203,6 +208,26 @@ def soundcloud_group(text):
         return format_group(group)
     except APIError as ae:
         return ae
+
+@hook.command("scplaylist")
+def soundcloud_playlist(text):
+    """<query> -- Searches for playlists on SoundCloud."""
+    if not api_key:
+        return "This command requires a SoundCloud API key."
+    try:
+        playlist = get_with_search('playlists', text)
+    except APIError as ae:
+        return ae
+
+    if not playlist:
+        return "No results found."
+
+    try:
+        return format_playlist(playlist)
+    except APIError as ae:
+        return ae
+
+
 
 
 @hook.regex(SC_RE)
