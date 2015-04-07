@@ -6,15 +6,15 @@ import random
 from sqlalchemy import Table, Column, PrimaryKeyConstraint, String
 
 from cloudbot import hook
-from cloudbot.util import timeformat, web, database
+from cloudbot.util import timeformat, web, botvars
 
 api_url = "http://ws.audioscrobbler.com/2.0/?format=json"
 
 table = Table(
     "lastfm",
-    database.metadata,
-    Column('nick', String(25)),
-    Column('acc', String(25)),
+    botvars.metadata,
+    Column('nick', String),
+    Column('acc', String),
     PrimaryKeyConstraint('nick')
 )
 
@@ -41,7 +41,8 @@ def get_account(nick):
         last_account = last_account[0]
     return last_account
 
-@hook.command("lastfm", "last", "np", "l", autohelp=False)
+
+@hook.command("lastfm", "np", "l", autohelp=False)
 def lastfm(text, nick, db, bot, notice):
     """[user] [dontsave] - displays the now playing (or last played) track of LastFM user [user]"""
     api_key = bot.config.get("api_keys", {}).get("lastfm")
@@ -139,10 +140,6 @@ def lastfmcompare(text, nick, bot, db):
     if user2_check:
         user2 = user2_check
 
-    user2_check = get_account(user2)
-    if user2_check:
-        user2 = user2_check
-		
     user1_check = get_account(user1)
     if user1_check:
         user1 = user1_check
@@ -203,7 +200,7 @@ def toptrack(text, nick, db, bot, notice):
         'api_key': api_key,
         'method': 'user.gettoptracks',
         'user': username,
-        'limit': 6
+        'limit': 5
     }
     request = requests.get(api_url, params=params)
 
@@ -214,7 +211,7 @@ def toptrack(text, nick, db, bot, notice):
     if 'error' in data:
         return "Error: {}.".format(data["message"])
     out = "{}'s favorite songs: ".format(username)
-    for r in range(6):
+    for r in range(5):
         track_name = data["toptracks"]["track"][r]["name"]
         artist_name = data["toptracks"]["track"][r]["artist"]["name"]
         play_count = data["toptracks"]["track"][r]["playcount"] 
@@ -241,7 +238,7 @@ def topartists(text, nick, db, bot, notice):
         'api_key': api_key,
         'method': 'user.gettopartists',
         'user': username,
-        'limit': 6
+        'limit': 5
     }
     request = requests.get(api_url, params=params)
 
@@ -253,7 +250,7 @@ def topartists(text, nick, db, bot, notice):
         return "Error: {}.".format(data["message"])
 
     out = "{}'s favorite artists: ".format(username)
-    for r in range(6):
+    for r in range(5):
         artist_name = data["topartists"]["artist"][r]["name"]
         play_count = data["topartists"]["artist"][r]["playcount"]
         out = out + "{} listened to {} times. ".format(artist_name, play_count)
@@ -312,13 +309,13 @@ def lastfm_track(text, nick, db, bot, notice):
     artist_name = response["track"]["artist"]["name"]
     album_name = response["track"]["album"]["title"]
     url = web.try_shorten(response["track"]["url"])
-    listeners = response["track"]["listeners"]
-    playcount = response["track"]["playcount"]
-    out = out = "'{}' from the album {} by {} has been played {} times by {} listeners. {}".format(
+    listeners = int(response["track"]["listeners"])
+    playcount = int(response["track"]["playcount"])
+    out = out = "'{}' from the album {} by {} has been played {:,} times by {:,} listeners. {}".format(
         track_name, album_name, artist_name, playcount, listeners, url)
     if 'userplaycount' in response["track"]:
-        userplaycount = response["track"]["userplaycount"]
-        out = "'{}' from the album {} by {} has been played {} times by {} listeners. {} has listened {} times. {}".format(
+        userplaycount = int(response["track"]["userplaycount"])
+        out = "'{}' from the album {} by {} has been played {:,} times by {:,} listeners. {} has listened {:,} times. {}".format(
             track_name, album_name, artist_name, playcount, listeners, username, userplaycount, url)
     return out
 
@@ -352,46 +349,6 @@ def lastfm_artist(text, nick, db, bot, notice):
             'autocorrect': 1
         }
 
-        'limit': 5
-    }
-    request = requests.get(api_url, params=params)
-
-    if request.status_code != requests.codes.ok:
-        return "Failed to fetch info ({})".format(request.status_code)
-
-    data = request.json()
-    if 'error' in data:
-        return "Error: {}.".format(data["message"])
-    out = "{}'s favorite songs: ".format(username)
-    for r in range(5):
-        track_name = data["toptracks"]["track"][r]["name"]
-        artist_name = data["toptracks"]["track"][r]["artist"]["name"]
-        play_count = data["toptracks"]["track"][r]["playcount"] 
-        out = out + "{} by {} listened to {} times. ".format(track_name, artist_name, play_count)
-    return out
-
-
-@hook.command("lta", "topartist", autohelp=False)
-def topartists(text, nick, db, bot, notice):
-    """Grabs a list of the top artists for a last.fm username. You can set your lastfm username with .l username"""
-    api_key = bot.config.get("api_keys", {}).get("lastfm")
-    if not api_key:
-        return "error: no api key set"
-
-    if text:
-        username = get_account(text)
-        if not username:
-            username = text
-    else:
-        username = get_account(nick)
-    if not username:
-        return("No last.fm username specified and no last.fm username is set in the database.")
-    params = {
-        'api_key': api_key,
-        'method': 'user.gettopartists',
-        'user': username,
-        'limit': 5
-    }
     request = requests.get(api_url, params=params)
 
     if request.status_code != requests.codes.ok:
@@ -402,22 +359,12 @@ def topartists(text, nick, db, bot, notice):
         return "Error: {}.".format(response["message"])
     artist_name = response["artist"]["name"]
     url = web.try_shorten(response["artist"]["url"])
-    listeners = response["artist"]["stats"]["listeners"]
-    playcount = response["artist"]["stats"]["playcount"]
-    out = out = "{} has been played {} times by {} listeners. {}".format(
+    listeners = int(response["artist"]["stats"]["listeners"])
+    playcount = int(response["artist"]["stats"]["playcount"])
+    out = out = "{} has been played {:,} times by {:,} listeners. {}".format(
         artist_name, playcount, listeners, url)
     if 'userplaycount' in response["artist"]["stats"]:
-        userplaycount = response["artist"]["stats"]["userplaycount"]
-        out = "'\x02{}\x02' has been played \x02{}\x02 times by \x02{}\x02 listeners. {} has listened \x02{}\x02 times. {}".format(
+        userplaycount = int(response["artist"]["stats"]["userplaycount"])
+        out = "'{}' has been played {:,} times by {:,} listeners. {} has listened {:,} times. {}".format(
             artist_name, playcount, listeners, username, userplaycount, url)
-    return out
-    data = request.json()
-    if 'error' in data:
-        return "Error: {}.".format(data["message"])
-
-    out = "{}'s favorite artists: ".format(username)
-    for r in range(5):
-        artist_name = data["topartists"]["artist"][r]["name"]
-        play_count = data["topartists"]["artist"][r]["playcount"]
-        out = out + "{} listened to {} times. ".format(artist_name, play_count)
     return out
