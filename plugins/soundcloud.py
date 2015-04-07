@@ -68,7 +68,11 @@ def format_track(track, show_url=True):
     if track['genre']:
         out += " - \x02{}\x02".format(track['genre'])
 
+<<<<<<< HEAD
     out += " - \x02{:,}\x02 plays, \x02{:,}\x02 favourites, \x02{:,}\x02 comments".format(track['playback_count'],
+=======
+    out += " - \x02{:,}\x02 plays, \x02{:,}\x02 favorites, \x02{:,}\x02 comments".format(track['playback_count'],
+>>>>>>> 331284e2dcc5aed33a46438d5944642ea4485d7e
                                                                                          track['favoritings_count'],
                                                                                          track['comment_count'])
 

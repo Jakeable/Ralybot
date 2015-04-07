@@ -1,6 +1,6 @@
 # Ralybot
 
-Ralybot is a simple, fast, expandable open-source Python IRC bot, and is a fork of another awesome bot called [CloudBot](https://github.com/CloudBotIRC/CloudBot/).
+Ralybot is a simple, fast, expandable and open-source Python IRC bot, and is a fork of another IRC bot called [CloudBot](https://github.com/CloudBotIRC/CloudBot/).
 
 ## Getting Ralybot
 
@@ -11,14 +11,14 @@ There are currently two different branches of this repository, each with a diffe
 
 Firstly, Ralybot will only run on **Python 3.4 or higher**. Because we use the asyncio module, you will not be able to use any other versions of Python.
 
-To install Ralybot on *nix (linux, etc), see [here](https://github.com/CloudBotIRC/CloudBot/wiki/Installing-on-*nix)
+To install Ralybot on *nix (Linux, etc), see [here](https://github.com/CloudBotIRC/CloudBot/wiki/Installing-on-*nix).
 
-To install Ralybot on Windows, see [here](https://github.com/CloudBotIRC/CloudBot/wiki/Installing-on-Windows)
+To install Ralybot on Windows, see [here](https://github.com/CloudBotIRC/CloudBot/wiki/Installing-on-Windows).
 
 
 ### Running Ralybot
 
-Before you run the bot, rename `config.default.json` to `config.json` and edit it with your preferred settings. You can check if your JSON is valid using [jsonlint.com](http://jsonlint.com/)!
+Before you run the bot, make sure you rename `config.default.json` to `config.json` and edit it with your preferred settings. You can check if your JSON is valid using [jsonlint.com](http://jsonlint.com/)!
 
 Once you have installed the required dependencies and renamed the config file, you can run the bot! Make sure you are in the correct folder and run the following command:
 
@@ -50,7 +50,7 @@ If you think you have found a bug/have a idea/suggestion, please **open a issue*
 
 ## Changelog
 
-See [CHANGELOG.md](https://github.com/KamranMackey/Ralybot/blob/master/CHANGELOG.md) for the changelog. **WARNING**: The changelog is not always updated and may be out of date with the current release version. You have been warned.
+See [CHANGELOG.md](https://github.com/KamranMackey/Ralybot/blob/master/CHANGELOG.md) for the changelog. **WARNING!**: The changelog is not always updated and may be out of date with the current release version. You have been warned.
 
 ## License
 

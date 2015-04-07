@@ -4,7 +4,11 @@
 import requests
 
 from cloudbot import hook
+<<<<<<< HEAD
 from cloudbot.util import formatting, filesize
+=======
+from cloudbot.util import http, formatting
+>>>>>>> 331284e2dcc5aed33a46438d5944642ea4485d7e
 
 API_CS = 'https://www.googleapis.com/customsearch/v1'
 
@@ -17,6 +21,10 @@ def load_api(bot):
     dev_key = bot.config.get("api_keys", {}).get("google_dev_key", None)
     cx = bot.config.get("api_keys", {}).get("google_cse_id", None)
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 331284e2dcc5aed33a46438d5944642ea4485d7e
 @hook.command('g', 'google', 'gse')
 def gse(text):
     """<query> -- Returns first Google search result for <query>."""
@@ -32,13 +40,24 @@ def gse(text):
     except KeyError:
         return "No results found."
 
+<<<<<<< HEAD
     title = formatting.truncate_str(result['title'], 60)
     content = result['snippet']
+=======
+    title = http.unescape(result['title'])
+    title = formatting.truncate_str(title, 60)
+    content = http.unescape(result['snippet'])
+>>>>>>> 331284e2dcc5aed33a46438d5944642ea4485d7e
 
     if not content:
         content = "No description available."
     else:
+<<<<<<< HEAD
         content = formatting.truncate_str(content.replace('\n', ''), 200)
+=======
+        content = http.html.fromstring(content).text_content()
+        content = formatting.truncate_str(content, 150)
+>>>>>>> 331284e2dcc5aed33a46438d5944642ea4485d7e
 
     return u'{} -- \x02{}\x02: "{}"'.format(result['link'], title, content)
 
@@ -50,6 +69,7 @@ def gse_gis(text):
     if not cx:
         return "This command requires a custom Google Search Engine ID."
 
+<<<<<<< HEAD
     parsed = requests.get(API_CS, params={"cx": cx, "q": text, "searchType": "image", "key": dev_key}).json()
 
     try:
@@ -62,3 +82,6 @@ def gse_gis(text):
     size = filesize.size(int(metadata['byteSize']))
 
     return u'{} [{}, {}, {}]'.format(result['link'], dimens, result['mime'], size)
+=======
+    return "Stuff will eventually happen."
+>>>>>>> 331284e2dcc5aed33a46438d5944642ea4485d7e

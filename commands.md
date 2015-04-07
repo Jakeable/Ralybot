@@ -19,7 +19,7 @@ Moderator Commands
 |Command Name | Description |
 |:------:|:--------------------------------------:|
 |'ignore | Ignores the specified user. This stops the bot from responding to the ignored user's input.|
-|'remember | Remembers "data" with "word" - add + to "data" to append |
+|'remember | Remembers `<data>` with `<word>` - add + to "data" to append |
 |'forget | Forgets previously remembered "word". |
 
 
