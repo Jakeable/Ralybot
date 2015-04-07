@@ -40,10 +40,6 @@ def get_account(nick):
     else:
         last_account = last_account[0]
     return last_account
-<<<<<<< HEAD
-
-
-=======
 
 
 >>>>>>> 708845caf10c715cd8bc2e1708fb5e3bc631b351
@@ -114,11 +110,7 @@ def lastfm(text, nick, db, bot, notice):
     if album:
         out += " from the album \x02{}\x0f".format(album)
     if url:
-<<<<<<< HEAD
         out += " - {}".format(url)
-=======
-        out += " {}".format(url)
->>>>>>> 708845caf10c715cd8bc2e1708fb5e3bc631b351
 
     # append ending based on what type it was
     out += ending
@@ -144,19 +136,15 @@ def lastfmcompare(text, nick, bot, db):
     except:
         user2 = text
         user1 = nick
-<<<<<<< HEAD
 
     user2_check = get_account(user2)
     if user2_check:
         user2 = user2_check
 
-=======
-
     user2_check = get_account(user2)
     if user2_check:
         user2 = user2_check
-
->>>>>>> 708845caf10c715cd8bc2e1708fb5e3bc631b351
+		
     user1_check = get_account(user1)
     if user1_check:
         user1 = user1_check
@@ -217,7 +205,6 @@ def toptrack(text, nick, db, bot, notice):
         'api_key': api_key,
         'method': 'user.gettoptracks',
         'user': username,
-<<<<<<< HEAD
         'limit': 6
     }
     request = requests.get(api_url, params=params)
@@ -367,7 +354,6 @@ def lastfm_artist(text, nick, db, bot, notice):
             'autocorrect': 1
         }
 
-=======
         'limit': 5
     }
     request = requests.get(api_url, params=params)
@@ -408,13 +394,11 @@ def topartists(text, nick, db, bot, notice):
         'user': username,
         'limit': 5
     }
->>>>>>> 708845caf10c715cd8bc2e1708fb5e3bc631b351
     request = requests.get(api_url, params=params)
 
     if request.status_code != requests.codes.ok:
         return "Failed to fetch info ({})".format(request.status_code)
 
-<<<<<<< HEAD
     response = request.json()
     if 'error' in response:
         return "Error: {}.".format(response["message"])
@@ -429,7 +413,6 @@ def topartists(text, nick, db, bot, notice):
         out = "'\x02{}\x02' has been played \x02{}\x02 times by \x02{}\x02 listeners. {} has listened \x02{}\x02 times. {}".format(
             artist_name, playcount, listeners, username, userplaycount, url)
     return out
-=======
     data = request.json()
     if 'error' in data:
         return "Error: {}.".format(data["message"])
@@ -440,4 +423,3 @@ def topartists(text, nick, db, bot, notice):
         play_count = data["topartists"]["artist"][r]["playcount"]
         out = out + "{} listened to {} times. ".format(artist_name, play_count)
     return out
->>>>>>> 708845caf10c715cd8bc2e1708fb5e3bc631b351

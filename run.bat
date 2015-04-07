@@ -1,2 +1,2 @@
 title Ralybot Console
-python -m cloudbot
+py -3 -m cloudbot

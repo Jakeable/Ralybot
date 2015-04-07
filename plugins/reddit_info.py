@@ -48,8 +48,8 @@ def moderates(text):
     return out
 
 
-@hook.command("karma", "ruser", singlethreaded=True)
-def karma(text):
+@hook.command("rkarma", "ruser", singlethreaded=True)
+def reddit_karma(text):
     """karma <reddituser> will return the information about the specified reddit username"""
     user = text
     url = user_url + "about.json"
