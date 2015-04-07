@@ -41,8 +41,6 @@ def get_account(nick):
         last_account = last_account[0]
     return last_account
 
-
->>>>>>> 708845caf10c715cd8bc2e1708fb5e3bc631b351
 @hook.command("lastfm", "last", "np", "l", autohelp=False)
 def lastfm(text, nick, db, bot, notice):
     """[user] [dontsave] - displays the now playing (or last played) track of LastFM user [user]"""

@@ -17,11 +17,6 @@ import requests
 
 from cloudbot import hook
 from cloudbot.util import formatting, filesize
-<<<<<<< HEAD
-
-from cloudbot.util import http, formatting
-=======
->>>>>>> 708845caf10c715cd8bc2e1708fb5e3bc631b351
 
 API_CS = 'https://www.googleapis.com/customsearch/v1'
 
@@ -33,11 +28,7 @@ def load_api(bot):
 
     dev_key = bot.config.get("api_keys", {}).get("google_dev_key", None)
     cx = bot.config.get("api_keys", {}).get("google_cse_id", None)
-<<<<<<< HEAD
-    
-=======
 
->>>>>>> 708845caf10c715cd8bc2e1708fb5e3bc631b351
 @hook.command('g', 'google', 'gse')
 def gse(text):
     """<query> -- Returns first Google search result for <query>."""
@@ -55,23 +46,11 @@ def gse(text):
 
     title = formatting.truncate_str(result['title'], 60)
     content = result['snippet']
-<<<<<<< HEAD
-    title = http.unescape(result['title'])
-    title = formatting.truncate_str(title, 60)
-    content = http.unescape(result['snippet'])
-=======
->>>>>>> 708845caf10c715cd8bc2e1708fb5e3bc631b351
 
     if not content:
         content = "No description available."
     else:
-<<<<<<< HEAD
-        content = formatting.truncate_str(content.replace('\n', ''), 200)
-        content = http.html.fromstring(content).text_content()
-        content = formatting.truncate_str(content, 150)
-=======
         content = formatting.truncate_str(content.replace('\n', ''), 150)
->>>>>>> 708845caf10c715cd8bc2e1708fb5e3bc631b351
 
     return u'{} -- \x02{}\x02: "{}"'.format(result['link'], title, content)
 
@@ -94,9 +73,4 @@ def gse_gis(text):
     dimens = '{}x{}px'.format(metadata['width'], metadata['height'])
     size = filesize.size(int(metadata['byteSize']))
 
-<<<<<<< HEAD
     return u'{} [{}, {}, {}]'.format(result['link'], dimens, result['mime'], size)
-    return "Stuff will eventually happen."
-=======
-    return u'{} [{}, {}, {}]'.format(result['link'], dimens, result['mime'], size)
->>>>>>> 708845caf10c715cd8bc2e1708fb5e3bc631b351

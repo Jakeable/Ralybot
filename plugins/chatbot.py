@@ -61,7 +61,6 @@ def cb_think(text):
 @hook.command("ask", "cleverbot", "cb")
 def ask(text):
     """ <question> -- Asks Cleverbot <question> """
-<<<<<<< HEAD
     session = cleverbot.Session()
     attempt = 0
 
@@ -75,6 +74,4 @@ def ask(text):
         return "Could not get response. Cleverbot is angry. :("
 
     return answer
-=======
     return cb_think(text)
->>>>>>> 708845caf10c715cd8bc2e1708fb5e3bc631b351
