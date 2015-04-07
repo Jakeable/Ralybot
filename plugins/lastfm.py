@@ -40,8 +40,13 @@ def get_account(nick):
     else:
         last_account = last_account[0]
     return last_account
+<<<<<<< HEAD
 
 
+=======
+
+
+>>>>>>> 708845caf10c715cd8bc2e1708fb5e3bc631b351
 @hook.command("lastfm", "last", "np", "l", autohelp=False)
 def lastfm(text, nick, db, bot, notice):
     """[user] [dontsave] - displays the now playing (or last played) track of LastFM user [user]"""
@@ -109,7 +114,11 @@ def lastfm(text, nick, db, bot, notice):
     if album:
         out += " from the album \x02{}\x0f".format(album)
     if url:
+<<<<<<< HEAD
         out += " - {}".format(url)
+=======
+        out += " {}".format(url)
+>>>>>>> 708845caf10c715cd8bc2e1708fb5e3bc631b351
 
     # append ending based on what type it was
     out += ending
@@ -135,11 +144,19 @@ def lastfmcompare(text, nick, bot, db):
     except:
         user2 = text
         user1 = nick
+<<<<<<< HEAD
 
     user2_check = get_account(user2)
     if user2_check:
         user2 = user2_check
 
+=======
+
+    user2_check = get_account(user2)
+    if user2_check:
+        user2 = user2_check
+
+>>>>>>> 708845caf10c715cd8bc2e1708fb5e3bc631b351
     user1_check = get_account(user1)
     if user1_check:
         user1 = user1_check
@@ -200,6 +217,7 @@ def toptrack(text, nick, db, bot, notice):
         'api_key': api_key,
         'method': 'user.gettoptracks',
         'user': username,
+<<<<<<< HEAD
         'limit': 6
     }
     request = requests.get(api_url, params=params)
@@ -349,11 +367,54 @@ def lastfm_artist(text, nick, db, bot, notice):
             'autocorrect': 1
         }
 
+=======
+        'limit': 5
+    }
     request = requests.get(api_url, params=params)
 
     if request.status_code != requests.codes.ok:
         return "Failed to fetch info ({})".format(request.status_code)
 
+    data = request.json()
+    if 'error' in data:
+        return "Error: {}.".format(data["message"])
+    out = "{}'s favorite songs: ".format(username)
+    for r in range(5):
+        track_name = data["toptracks"]["track"][r]["name"]
+        artist_name = data["toptracks"]["track"][r]["artist"]["name"]
+        play_count = data["toptracks"]["track"][r]["playcount"] 
+        out = out + "{} by {} listened to {} times. ".format(track_name, artist_name, play_count)
+    return out
+
+
+@hook.command("lta", "topartist", autohelp=False)
+def topartists(text, nick, db, bot, notice):
+    """Grabs a list of the top artists for a last.fm username. You can set your lastfm username with .l username"""
+    api_key = bot.config.get("api_keys", {}).get("lastfm")
+    if not api_key:
+        return "error: no api key set"
+
+    if text:
+        username = get_account(text)
+        if not username:
+            username = text
+    else:
+        username = get_account(nick)
+    if not username:
+        return("No last.fm username specified and no last.fm username is set in the database.")
+    params = {
+        'api_key': api_key,
+        'method': 'user.gettopartists',
+        'user': username,
+        'limit': 5
+    }
+>>>>>>> 708845caf10c715cd8bc2e1708fb5e3bc631b351
+    request = requests.get(api_url, params=params)
+
+    if request.status_code != requests.codes.ok:
+        return "Failed to fetch info ({})".format(request.status_code)
+
+<<<<<<< HEAD
     response = request.json()
     if 'error' in response:
         return "Error: {}.".format(response["message"])
@@ -368,3 +429,15 @@ def lastfm_artist(text, nick, db, bot, notice):
         out = "'\x02{}\x02' has been played \x02{}\x02 times by \x02{}\x02 listeners. {} has listened \x02{}\x02 times. {}".format(
             artist_name, playcount, listeners, username, userplaycount, url)
     return out
+=======
+    data = request.json()
+    if 'error' in data:
+        return "Error: {}.".format(data["message"])
+
+    out = "{}'s favorite artists: ".format(username)
+    for r in range(5):
+        artist_name = data["topartists"]["artist"][r]["name"]
+        play_count = data["topartists"]["artist"][r]["playcount"]
+        out = out + "{} listened to {} times. ".format(artist_name, play_count)
+    return out
+>>>>>>> 708845caf10c715cd8bc2e1708fb5e3bc631b351

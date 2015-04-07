@@ -161,6 +161,7 @@ def taco(text, action):
                                       variables={"user": user})
 
     # act out the message
+<<<<<<< HEAD
     action(generator.generate_string())
 
 @asyncio.coroutine
@@ -176,3 +177,6 @@ def cakecookie(text,action):
                                "bowl of jello", "glass of chocolate milk", "bowl of frozen yogurt"])
 
     action("hands {} a cake full of cookies and serves it with a {}!".format(user,side_dish))
+=======
+    action(generator.generate_string())
+>>>>>>> 708845caf10c715cd8bc2e1708fb5e3bc631b351

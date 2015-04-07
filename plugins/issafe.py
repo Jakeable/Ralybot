@@ -1,8 +1,17 @@
 """
 issafe.py
+<<<<<<< HEAD
 Check the Google Safe Browsing list to see a website's safety rating.
 Created By:
     - Foxlet <http://furcode.tk/>
+=======
+
+Check the Google Safe Browsing list to see a website's safety rating.
+
+Created By:
+    - Foxlet <http://furcode.tk/>
+
+>>>>>>> 708845caf10c715cd8bc2e1708fb5e3bc631b351
 License:
     GNU General Public License (Version 3)
 """
@@ -33,4 +42,8 @@ def issafe(text):
         condition = "\x02{}\x02 is safe.".format(text)
     else:
         condition = "\x02{}\x02 is known to contain: {}".format(text, parsed.text)
+<<<<<<< HEAD
     return condition
+=======
+    return condition
+>>>>>>> 708845caf10c715cd8bc2e1708fb5e3bc631b351

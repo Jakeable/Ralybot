@@ -10,7 +10,11 @@ import logging.config
 import logging
 import os
 
+<<<<<<< HEAD
 __version__ = "1.0.9-unstable"
+=======
+__version__ = "1.0.8"
+>>>>>>> 708845caf10c715cd8bc2e1708fb5e3bc631b351
 
 __all__ = ["util", "bot", "connection", "config", "permissions", "plugin", "event", "hook", "log_dir"]
 

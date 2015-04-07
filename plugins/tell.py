@@ -88,7 +88,11 @@ def add_tell(db, server, sender, target, message):
 
 def tell_check(conn, nick):
     for _conn, _target in tell_cache:
+<<<<<<< HEAD
         if (conn, nick) == (_conn, _target):
+=======
+        if (conn, nick.lower()) == (_conn, _target):
+>>>>>>> 708845caf10c715cd8bc2e1708fb5e3bc631b351
             return True
         else:
             continue
