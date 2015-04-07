@@ -7,6 +7,7 @@ import re
 
 from cloudbot import hook
 from cloudbot.util import textgen
+from cloudbot.event import EventType
 
 nick_re = re.compile("^[A-Za-z0-9_|.\-\]\[\{\}]*$", re.I)
 
@@ -176,3 +177,16 @@ def insult(text, conn, nick, notice, message):
         target = nick
 
     message("{}, {}".format(target, random.choice(insults)))
+
+@hook.command
+def punch(text, action):
+    """<user> - punches <user>"""
+    text = text.strip()
+
+    if text.lower() == "kamran":
+        return "No."
+
+    action('punches {}.'.format(text))
+    action('punches {} again.'.format(text))
+    action('punches {} a few more times.'.format(text))
+    action('punches {} one last time for good measure.'.format(text))

@@ -33,4 +33,5 @@ User Commands
 |'cake | Gives the specified user a cake! |
 |'potato | Gives the specified user a potato. |
 |'youtube | Returns the first YouTube search result for the specified video. |
-|'wiki | Searches Wikipedia for a specified article, such as YouTube.
+|'wiki | Searches Wikipedia for a specified article, such as YouTube. |
+|'taco | Gives a taco to the specified user. |

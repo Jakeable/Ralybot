@@ -65,10 +65,13 @@ def load_foods(bot):
     """
     :type bot: cloudbot.bot.CloudBot
     """
-    global sandwich_data
+    global sandwich_data, taco_data
 
     with codecs.open(os.path.join(bot.data_dir, "sandwich.json"), encoding="utf-8") as f:
         sandwich_data = json.load(f)
+
+    with codecs.open(os.path.join(bot.data_dir, "taco.json"), encoding="utf-8") as f:
+        taco_data = json.load(f)
 
 
 @asyncio.coroutine
@@ -123,23 +126,53 @@ def cookie(text, action):
     size = random.choice(['small', 'little', 'medium-sized', 'large', 'gigantic'])
     flavor = random.choice(['tasty', 'delectable', 'delicious', 'yummy', 'toothsome', 'scrumptious', 'luscious'])
     method = random.choice(['makes', 'gives', 'gets', 'buys'])
-    side_dish = random.choice(['glass of milk', 'bowl of ice cream', 'bowl of chocolate sauce', "bowl of jello"])
+    side_dish = random.choice(['glass of milk', 'bowl of ice cream', 'bowl of chocolate sauce', "bowl of jello",
+    "bowl of frozen yogurt"])
 
     action("{} {} a {} {} {} cookie and serves it with a {}!".format(method, user, flavor, size, cookie_type,
                                                                      side_dish))
 
 
-@asyncio.coroutine
+asyncio.coroutine
 @hook.command
 def sandwich(text, action):
     """<user> - give a tasty sandwich to <user>"""
     user = text.strip()
 
     if not is_valid(user):
-        return "I can't give a cookie to that user."
+        return "I can't give a sandwich to that user."
 
     generator = textgen.TextGenerator(sandwich_data["templates"], sandwich_data["parts"],
                                       variables={"user": user})
 
     # act out the message
     action(generator.generate_string())
+
+@asyncio.coroutine
+@hook.command
+def taco(text, action):
+    """<user> - give a taco to <user>"""
+    user = text.strip()
+
+    if not is_valid(user):
+        return "I can't give a taco to that user."
+
+    generator = textgen.TextGenerator(taco_data["templates"], taco_data["parts"],
+                                      variables={"user": user})
+
+    # act out the message
+    action(generator.generate_string())
+
+@asyncio.coroutine
+@hook.command
+def cakecookie(text,action):
+    """<user> - gives a cake full of cookies to <user>."""
+    user = text.strip()
+
+    if not is_valid(user):
+        return "I can't give a cake full of cookies to that user"
+
+    side_dish = random.choice(['glass of milk', 'bowl of ice cream', 'bowl of chocolate sauce',
+                               "bowl of jello", "glass of chocolate milk", "bowl of frozen yogurt"])
+
+    action("hands {} a cake full of cookies and serves it with a {}!".format(user,side_dish))

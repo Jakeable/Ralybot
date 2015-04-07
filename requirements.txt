@@ -16,3 +16,4 @@ pyenchant
 pythonwhois
 imgurpython
 isodate
+git+https://github.com/Anorov/cloudflare-scrape.git@master

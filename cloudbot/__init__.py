@@ -1,8 +1,8 @@
 import sys
 
 # check python version
-if sys.version_info < (3, 4, 2):
-    print("Ralybot requires Python 3.4.2 or newer to run.")
+if sys.version_info < (3, 4, 0):
+    print("Ralybot requires Python 3.4.0 or newer to run.")
     sys.exit(1)
 
 import json

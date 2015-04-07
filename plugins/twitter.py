@@ -3,9 +3,10 @@ import random
 from datetime import datetime
 
 import tweepy
-from cloudbot import hook
 
+from cloudbot import hook
 from cloudbot.util import timeformat
+
 
 TWITTER_RE = re.compile(r"(?:(?:www.twitter.com|twitter.com)/(?:[-_a-zA-Z0-9]+)/status/)([0-9]+)", re.I)
 
@@ -174,5 +175,5 @@ def twuser(text):
 
     return "{}@\x02{}\x02 ({}){} has \x02{:,}\x02 tweets, \x02{:,}\x02 followers.{}" \
            "".format(prefix, user.screen_name, user.name, loc_str, user.statuses_count, user.followers_count,
-                    desc_str)
+                     desc_str)
     

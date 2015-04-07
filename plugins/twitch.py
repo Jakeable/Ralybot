@@ -46,7 +46,7 @@ def twitch_lookup(location):
             title = data["streams"][0]["channel"]["status"]
             playing = data["streams"][0]["game"]
             v = data["streams"][0]["viewers"]
-            viewers = str(title) + " is currently " + "\x033\x02online!\x02\x0f " + str(v) + " viewer" + ("s are currently watching!" if v != 1 else "")
+            viewers = "\x033\x02Online now!\x02\x0f " + str(v) + " viewer" + ("s are currently watching!" if v != 1 else "")
             return html.unescape(fmt.format(title, channel, playing, viewers))
         else:
             try:

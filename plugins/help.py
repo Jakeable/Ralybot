@@ -4,7 +4,7 @@ import re
 
 from cloudbot import hook
 from cloudbot.util import formatting
-
+    
 
 @asyncio.coroutine
 @hook.command("help", autohelp=False)
@@ -67,6 +67,6 @@ def help_command(text, chan, conn, bot, notice, message, has_permission):
             if chan[:1] == "#":
                 notice(line)
             else:
-                # This is a user in this case.
+                #This is an user in this case.
                 message(line)
-        notice("For more detailed information on a certain command, use {}help <command>, without the brackets.".format(conn.config["command_prefix"]))
+        notice("For more detailed information on a certain command, use {}help <command-name>, without the brackets.".format(conn.config["command_prefix"]))

@@ -65,6 +65,7 @@ class Poll:
 
 @hook.command()
 def poll(text, conn, nick, chan, message, reply):
+    """<title> <items> -- Creates a poll with the specified <title> and <items>. <items> are split via a comma."""
     global polls
 
     # get poll ID
@@ -99,7 +100,7 @@ def poll(text, conn, nick, chan, message, reply):
 
     option_str = get_text_list([option.title for option in _poll.options.values()], "and")
     message('Created poll \x02\"{}\"\x02 with the following options: {}'.format(_poll.question, option_str))
-    message("Use .vote {} <option> to vote on this poll!".format(nick.lower()))
+    message("Use {}vote {} <option> to vote on this poll!".format(conn.config["command_prefix"], nick.lower()))
 
 
 @hook.command(autohelp=True)
