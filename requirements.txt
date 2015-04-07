@@ -7,10 +7,7 @@ watchdog
 lxml
 beautifulsoup4
 feedparser
-<<<<<<< HEAD
 pbkdf2
-=======
->>>>>>> 11ea690b9a9433f1955a50b8b93ee78756cd6e41
 requests
 psutil
 requests-oauthlib
