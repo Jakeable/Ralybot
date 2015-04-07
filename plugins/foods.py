@@ -162,6 +162,7 @@ def taco(text, action):
 
     # act out the message
 <<<<<<< HEAD
+<<<<<<< HEAD
     action(generator.generate_string())
 
 @asyncio.coroutine
@@ -180,3 +181,6 @@ def cakecookie(text,action):
 =======
     action(generator.generate_string())
 >>>>>>> 708845caf10c715cd8bc2e1708fb5e3bc631b351
+=======
+    action(generator.generate_string())
+>>>>>>> 11ea690b9a9433f1955a50b8b93ee78756cd6e41

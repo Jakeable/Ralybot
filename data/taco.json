@@ -16,9 +16,13 @@
       "delicious",
       ["boring", 1],
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
       ["disgusting", 1],
 >>>>>>> 708845caf10c715cd8bc2e1708fb5e3bc631b351
+=======
+      ["disgusting", 1],
+>>>>>>> 11ea690b9a9433f1955a50b8b93ee78756cd6e41
       "perfect"
     ],
     "meat": [
