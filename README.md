@@ -1,6 +1,8 @@
 # Ralybot [![Documentation Status](https://readthedocs.org/projects/ralybot/badge/?version=latest)](https://readthedocs.org/projects/ralybot/?badge=latest)
 
-Ralybot is a simple, fast, expandable and open-source Python IRC bot, and is a fork of another IRC bot called [CloudBot](https://github.com/CloudBotIRC/CloudBot/). It's documentation is on [Read The Docs](https://ralybot.readthedocs.org/en/latest/). **Note**: The documentation is still a work-in-progress and is not finished yet. You can find the source code for the documentation at the [Ralybot-Docs](https://github.com/KamranMackey/Ralybot-Docs) GitHub repository.
+Ralybot is a simple, fast, expandable and open-source Python IRC bot, and is a fork of another IRC bot called [CloudBot](https://github.com/CloudBotIRC/CloudBot/). Its documentation is on [Read The Docs](https://ralybot.readthedocs.org/en/latest/). 
+
+**Note**: The documentation is still a work-in-progress and is not finished yet. You can find the source code for the documentation at the [Ralybot-Docs](https://github.com/KamranMackey/Ralybot-Docs) GitHub repository.
 
 ## Getting Ralybot
 
