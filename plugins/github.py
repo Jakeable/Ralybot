@@ -1,3 +1,22 @@
+"""
+github.py
+Allows viewing of GitHub issues and soon GitHub users and repositories!
+
+Created By:
+    - Steven Smith <https://github.com/blha303>
+    
+Modified By:
+    - Luke Rogers <https://github.com/lukeroge>
+    - Kamran Mackey <https://github.com/KamranMackey>
+    - Fletcher Boyd <https://github.com/thenoddle68>
+    - Blake Bengtson <https://github.com/bbeng89>
+    - Dabo Ross <https://github.com/daboross>
+    - Bjorn Neergaard <https://github.com/neersighted>
+
+License:
+    GPL v3
+"""
+
 import re
 import requests
 
