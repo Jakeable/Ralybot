@@ -18,9 +18,7 @@ env:
   - PYTHONPATH=.
 
 notifications:
-  slack:
-    rooms:
-      - kamranmackey:jGZfd7yguPMSjdorsZW0ZZER#ralybot
+  slack: kamranmackey:jGZfd7yguPMSjdorsZW0ZZER
   irc:
     channels:
       - "irc.esper.net#Ralybot"
