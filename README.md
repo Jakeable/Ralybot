@@ -36,6 +36,9 @@ Specify the path as /path/to/repository/cloudbot/__main__.py, where `cloudbot` i
 
 ## Getting help with Ralybot
 
+### New Issue Tracker & Wiki
+Ralybot will soon be moving to a different issue tracker called [JIRA](https://www.atlassian.com/software/jira) and a different wiki platform called [Confluence](https://www.atlassian.com/software/confluence) which are both developed by [Atlassian](https://www.atlassian.com). I will be hosting the instances myself on my own server. This means that the issue tracker and wiki that we are using currently (The GitHub issue tracker and wiki) will be disabled once I get the JIRA & Confluence instances all setup and configured. 
+
 ### Documentation
 
 The Ralybot documentation is currently somewhat outdated and may not be correct. If you need any help, please visit our [IRC channel](irc://irc.esper.net/cloudbot) and we will be happy to assist you.
