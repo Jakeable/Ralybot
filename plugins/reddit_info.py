@@ -7,8 +7,8 @@ from cloudbot import hook
 
 user_url = "http://reddit.com/user/{}/"
 subreddit_url = "http://reddit.com/r/{}/"
-# This agent should be unique for your cloudbot instance
-agent = {"User-Agent":"gonzobot a cloudbot (IRCbot) implementation for snoonet.org by /u/bloodygonzo"}
+# This user agent should be unique for your CloudBot instance.
+agent = {"User-Agent":"Ralybot a cloudbot (IRCbot) implementation for IRC by /u/KamranMackey"}
 
 
 def statuscheck(status, item):

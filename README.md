@@ -1,6 +1,6 @@
 # Ralybot [![Documentation Status](https://readthedocs.org/projects/ralybot/badge/?version=latest)](https://readthedocs.org/projects/ralybot/?badge=latest)
 
-Ralybot is a simple, fast, expandable and open-source Python IRC bot, and is a fork of another IRC bot called [CloudBot](https://github.com/CloudBotIRC/CloudBot/). Its documentation is on [Read The Docs](https://ralybot.readthedocs.org/en/latest/). 
+Ralybot is a simple, fast, expandable and open-source Python IRC bot, and is a fork of another IRC bot called [CloudBot](https://github.com/CloudBotIRC/CloudBot/). Its documentation is on [Read The Docs](https://ralybot.readthedocs.org/en/latest/). I'd also like to mention that Ralybot now has its own Trello board set up. You can find the board [here](https://trello.com/b/olPXxniK/ralybot).
 
 **Note**: The documentation is still a work-in-progress and is not finished yet. You can find the source code for the documentation at the [Ralybot-Docs](https://github.com/KamranMackey/Ralybot-Docs) GitHub repository.
 
@@ -22,7 +22,7 @@ To install Ralybot on Windows, see [here](https://github.com/CloudBotIRC/CloudBo
 
 Before you run the bot, make sure you rename `config.default.json` to `config.json` and edit it with your preferred settings. You can check if your JSON is valid using [jsonlint.com](http://jsonlint.com/)!
 
-Once you have installed the required dependencies and renamed the config file, you can run the bot! Make sure you are in the correct folder and run the following command:
+Once you have installed the required dependencies and renamed the config file, you can run the bot! Make sure you are in the correct folder and run the following command in a terminal:
 
 ```
 python3.4 -m Ralybot

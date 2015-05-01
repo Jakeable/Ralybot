@@ -87,8 +87,8 @@ class CloudBot:
         self.config_reloading_enabled = self.config.get("reloading", {}).get("config_reloading", True)
 
         # this doesn't REALLY need to be here but it's nice
-        self.user_agent = self.config.get('user_agent', 'CloudBot/3.0 - CloudBot Refresh '
-                                                        '<https://github.com/CloudBotIRC/CloudBot/>')
+        self.user_agent = self.config.get('user_agent', 'Ralybot/1.0 - Ralybot '
+                                                        '<https://github.com/KamranMackey/Ralybot/>')
 
         # setup db
         db_path = self.config.get('database', 'sqlite:///cloudbot.db')
@@ -122,11 +122,11 @@ class CloudBot:
     def run(self):
         """
         Starts CloudBot.
-        This will load plugins, connect to IRC, and process input.
-        :return: True if CloudBot should be restarted, False otherwise
+        This will load the plugins, connect to IRC, and process input.
+        :return: True if CloudBot should be restarted, False if it shouldn't.
         :rtype: bool
         """
-        # Initializes the bot, plugins and connections
+        # Initializes the bot, the plugins and any connections that are set up
         self.loop.run_until_complete(self._init_routine())
         # Wait till the bot stops. The stopped_future will be set to True to restart, False otherwise
         restart = self.loop.run_until_complete(self.stopped_future)
@@ -205,7 +205,7 @@ class CloudBot:
         # Connect to servers
         yield from asyncio.gather(*[conn.connect() for conn in self.connections.values()], loop=self.loop)
 
-        # Activate web interface.
+        # Activate the web interface.
         if self.config.get("web", {}).get("enabled", False) and web_installed:
             self.web.start()
 
