@@ -1052,6 +1052,14 @@
     <Compile Include="cloudbot\util\filesize.py" />
     <Compile Include="cloudbot\util\formatting.py" />
     <Compile Include="cloudbot\util\http.py" />
+    <Compile Include="cloudbot\util\test\test_colors.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cloudbot\util\test\test_database.py" />
+    <Compile Include="cloudbot\util\test\test_filesize.py" />
+    <Compile Include="cloudbot\util\test\test_formatting.py" />
+    <Compile Include="cloudbot\util\test\test_timeformat.py" />
+    <Compile Include="cloudbot\util\test\test_tokenbucket.py" />
     <Compile Include="cloudbot\util\textgen.py" />
     <Compile Include="cloudbot\util\timeformat.py" />
     <Compile Include="cloudbot\util\timeparse.py" />
@@ -1410,6 +1418,7 @@
     <Folder Include="cloudbot\clients\__pycache__\" />
     <Folder Include="cloudbot\logs\" />
     <Folder Include="cloudbot\util\" />
+    <Folder Include="cloudbot\util\test\" />
     <Folder Include="cloudbot\util\__pycache__\" />
     <Folder Include="cloudbot\web\" />
     <Folder Include="cloudbot\web\static\" />
