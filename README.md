@@ -36,6 +36,9 @@ Specify the path as /path/to/repository/cloudbot/__main__.py, where `cloudbot` i
 
 ## Getting help with Ralybot
 
+### New Issue Tracker & Wiki
+Ralybot will soon be moving to a different issue tracker called [JIRA](https://www.atlassian.com/software/jira) and a different wiki platform called [Confluence](https://www.atlassian.com/software/confluence) which are both developed by [Atlassian](https://www.atlassian.com). I will be hosting the instances myself on my own server. This means that the issue tracker and wiki that we are using currently (The GitHub issue tracker and wiki) will be disabled once I get the JIRA & Confluence instances all setup and configured. 
+
 ### Documentation
 
 The Ralybot documentation is currently somewhat outdated and may not be correct. If you need any help, please visit our [IRC channel](irc://irc.esper.net/cloudbot) and we will be happy to assist you.
@@ -81,6 +84,4 @@ Ralybot is **licensed** under the **GPL v3** license. The terms are as follows.
 This product includes GeoLite2 data created by MaxMind, available from
 <a href="http://www.maxmind.com">http://www.maxmind.com</a>. GeoLite2 databases are distributed under the [Creative Commons Attribution-ShareAlike 3.0 Unported License](https://creativecommons.org/licenses/by-sa/3.0/)
 
-![Powered by wordnik](https://www.wordnik.com/img/wordnik_badge_a1.png)
-
-This product uses data from <a href="http://wordnik.com">http://wordnik.com</a> in accordance with the wordnik.com API <a href="http://developer.wordnik.com/#!/terms">terms of service</a>.
+This product uses data from <a href="http://wordnik.com">http://wordnik.com</a> in accordance with the wordnik.com API <a href="http://developer.wordnik.com/#!/terms">Terms of Service</a>.

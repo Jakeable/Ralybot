@@ -9,12 +9,12 @@
                 "ignore_cert": true,
                 "password": ""
             },
-            "nick": "MyCloudBot",
-            "user": "cloudbot",
+            "nick": "MyRalybot",
+            "user": "ralybot",
             "avoid_notices": false,
             "channels": [
-                "#cloudbot",
-                "#cloudbot2"
+                "#ralybot",
+                "#ralybot2"
             ],
             "disabled_commands": [],
             "acls": {},
@@ -95,7 +95,7 @@
       "enabled": true,
       "address": "0.0.0.0",
       "port": 8090,
-      "bot_name": "CloudBot"
+      "bot_name": "Ralybot"
     },
     "reloading": {
         "config_reloading": true,

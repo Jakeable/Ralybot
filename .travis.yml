@@ -18,6 +18,7 @@ env:
   - PYTHONPATH=.
 
 notifications:
+  slack: kamranmackey:jGZfd7yguPMSjdorsZW0ZZER
   irc:
     channels:
       - "irc.esper.net#Ralybot"
@@ -26,3 +27,4 @@ notifications:
   on_failure: always
   on_success: change
   skip_join: true
+  
