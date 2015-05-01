@@ -5,7 +5,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{544d2909-e401-46c9-8b84-03f615b349dc}</ProjectGuid>
     <ProjectHome />
-    <StartupFile />
+    <StartupFile>cloudbot\__init__.py</StartupFile>
     <SearchPath />
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>
@@ -13,6 +13,7 @@
     <LaunchProvider>Standard Python launcher</LaunchProvider>
     <InterpreterId>{2af0f10d-7135-4994-9156-5d01c9c11b7e}</InterpreterId>
     <InterpreterVersion>3.4</InterpreterVersion>
+    <IsWindowsApplication>False</IsWindowsApplication>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
   <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
@@ -21,6 +22,8 @@
     <PtvsTargetsFile>$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets</PtvsTargetsFile>
   </PropertyGroup>
   <ItemGroup>
+    <Content Include=".vs\config" />
+    <Content Include=".vs\Ralybot\v14" />
     <Content Include=".cache\v\cache\lastfailed" />
     <Content Include=".coverage" />
     <Content Include=".editorconfig" />
@@ -1413,6 +1416,8 @@
     <Folder Include=".idea" />
     <Folder Include=".idea\dictionaries" />
     <Folder Include=".idea\scopes" />
+    <Folder Include=".vs\" />
+    <Folder Include=".vs\Ralybot\" />
     <Folder Include="cloudbot\" />
     <Folder Include="cloudbot\clients\" />
     <Folder Include="cloudbot\clients\__pycache__\" />
