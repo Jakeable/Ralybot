@@ -1,3 +1,7 @@
+"""
+flip.py - Allows users to flip things (I guess?)
+"""
+
 import random
 
 from ralybot import hook
