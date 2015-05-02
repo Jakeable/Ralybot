@@ -3,8 +3,8 @@ from cloudbot.util.formatting import munge, dict_format, pluralize, strip_colors
 
 test_munge_input = "The quick brown fox jumps over the lazy dog"
 test_munge_count = 3
-test_munge_result_a = "Ţħë ʠüíċķ Бŗöωñ ƒöχ ĵüṁρš övëŗ ţħë ĺäźÿ đöġ"
-test_munge_result_b = "Ţħë quick brown fox jumps over the lazy dog"
+test_munge_result_a = "??� ?��?? ??�?� ��? ?�??� �v�? ??� ?�?� ?�?"
+test_munge_result_b = "??� quick brown fox jumps over the lazy dog"
 
 test_format_formats = ["{a} {b} {c}", "{a} {b}", "{a}"]
 test_format_data = {"a": "First Thing", "b": "Second Thing"}
@@ -32,7 +32,7 @@ test_truncate_words_result_a = "I am the example string..."
 test_truncate_words_result_b = "I am the example string for a unit test"
 
 test_strip_html_input = "<strong>Cats &amp; Dogs: &#181;</strong>"
-test_strip_html_result = "Cats & Dogs: µ"
+test_strip_html_result = "Cats & Dogs: �"
 
 test_multiword_replace_dict = {"<bit1>": "<replace1>", "[bit2]": "[replace2]"}
 test_multiword_replace_text = "<bit1> likes [bit2]"

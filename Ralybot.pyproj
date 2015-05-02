@@ -22,6 +22,8 @@
     <PtvsTargetsFile>$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets</PtvsTargetsFile>
   </PropertyGroup>
   <ItemGroup>
+    <Content Include=".vs/Ralybot/.suo" />
+    <Content Include=".vs/config/applicationhost.config" />
     <Content Include=".cache\v\cache\lastfailed" />
     <Content Include=".coverage" />
     <Content Include=".editorconfig" />
@@ -1414,6 +1416,9 @@
     <Folder Include=".idea" />
     <Folder Include=".idea\dictionaries" />
     <Folder Include=".idea\scopes" />
+    <Folder Include=".vs\" />
+    <Folder Include=".vs\config\" />
+    <Folder Include=".vs\Ralybot\" />
     <Folder Include="cloudbot\" />
     <Folder Include="cloudbot\clients\" />
     <Folder Include="cloudbot\clients\__pycache__\" />
