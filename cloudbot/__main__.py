@@ -26,7 +26,7 @@ def main():
     logging.logProcesses = 0
 
     logger = logging.getLogger("cloudbot")
-    logger.info("Starting CloudBot.")
+    logger.info("Starting Ralybot.")
 
     # create the bot
     _bot = CloudBot()

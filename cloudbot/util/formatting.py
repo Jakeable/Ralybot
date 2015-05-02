@@ -1,38 +1,27 @@
 """
 formatting.py
-
 Contains functions for formatting and working with strings.
-
 The licensing for this module isn't solid, because I started working on this module before I had a proper
-system for tracking code licences. If your code is in this file and you have any queries, contact me by
+system for tracking code licenses. If your code is in this file and you have any queries, contact me by
 email at <lukeroge@gmail.com>!
-
 Maintainer:
     - Luke Rogers <https://github.com/lukeroge>
-
 License:
     GPL v3
-
 License for final section (all code after the "DJANGO LICENCE" comment):
     BSD license
-
     Copyright (c) Django Software Foundation and individual contributors.
     All rights reserved.
-
     Redistribution and use in source and binary forms, with or without modification,
     are permitted provided that the following conditions are met:
-
         1. Redistributions of source code must retain the above copyright notice,
            this list of conditions and the following disclaimer.
-
         2. Redistributions in binary form must reproduce the above copyright
            notice, this list of conditions and the following disclaimer in the
            documentation and/or other materials provided with the distribution.
-
         3. Neither the name of Django nor the names of its contributors may be used
            to endorse or promote products derived from this software without
            specific prior written permission.
-
     THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
     ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
     WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
@@ -58,59 +47,58 @@ from cloudbot.util.colors import strip_irc
 IRC_COLOR_RE = re.compile(r"(\x03(\d+,\d+|\d)|[\x0f\x02\x16\x1f])")
 
 REPLACEMENTS = {
-    'a': 'Ã¤',
-    'b': 'Ð?',
-    'c': 'Ä?',
-    'd': 'Ä?',
-    'e': 'Ã«',
-    'f': 'Æ?',
-    'g': 'Ä¡',
-    'h': 'Ä§',
-    'i': 'Ã­',
-    'j': 'Äµ',
-    'k': 'Ä·',
-    'l': 'Äº',
-    'm': 'á¹',
-    'n': 'Ã±',
-    'o': 'Ã¶',
-    'p': 'Ï',
-    'q': 'Ê ',
-    'r': 'Å?',
-    's': 'Å¡',
-    't': 'Å£',
-    'u': 'Ã¼',
+    'a': 'ä',
+    'b': '?',
+    'c': '?',
+    'd': '?',
+    'e': 'ë',
+    'f': 'ƒ',
+    'g': '?',
+    'h': '?',
+    'i': 'í',
+    'j': '?',
+    'k': '?',
+    'l': '?',
+    'm': '?',
+    'n': 'ñ',
+    'o': 'ö',
+    'p': '?',
+    'q': '?',
+    'r': '?',
+    's': 'š',
+    't': '?',
+    'u': 'ü',
     'v': '',
-    'w': 'Ï?',
-    'x': 'Ï?',
-    'y': 'Ã¿',
-    'z': 'Åº',
-    'A': 'Ã
-',
-    'B': 'Î?',
-    'C': 'Ã?',
-    'D': 'Ä?',
-    'E': 'Ä?',
-    'F': 'á¸?',
-    'G': 'Ä ',
-    'H': 'Ä¦',
-    'I': 'Ã',
-    'J': 'Ä´',
-    'K': 'Ä¶',
-    'L': 'Ä¹',
-    'M': 'Î?',
-    'N': 'Î',
-    'O': 'Ã?',
-    'P': 'Ð ',
-    'Q': 'ï¼±',
-    'R': 'Å?',
-    'S': 'Å ',
-    'T': 'Å¢',
-    'U': 'Å®',
-    'V': 'á¹¾',
-    'W': 'Å´',
-    'X': 'Î§',
-    'Y': 'á»²',
-    'Z': 'Å»'
+    'w': '?',
+    'x': '?',
+    'y': 'ÿ',
+    'z': '?',
+    'A': 'Å',
+    'B': '?',
+    'C': 'Ç',
+    'D': '?',
+    'E': '?',
+    'F': '?',
+    'G': '?',
+    'H': '?',
+    'I': 'Í',
+    'J': '?',
+    'K': '?',
+    'L': '?',
+    'M': '?',
+    'N': '?',
+    'O': 'Ö',
+    'P': '?',
+    'Q': '?',
+    'R': '?',
+    'S': 'Š',
+    'T': '?',
+    'U': '?',
+    'V': '?',
+    'W': '?',
+    'X': '?',
+    'Y': '?',
+    'Z': '?'
 }
 
 
@@ -287,7 +275,6 @@ def smart_split(text):
     backslashes. In the output, strings will keep their initial and trailing
     quote marks and escaped quotes will remain escaped (the results can then
     be further processed with unescape_string_literal()).
-
     >> list(smart_split(r'This is "a person\'s" test.'))
     ['This', 'is', '"a person\\\'s"', 'test.']
     >> list(smart_split(r"Another 'person\'s' test."))
