@@ -1,44 +1,49 @@
+import random
+
+from ralybot import hook
+from ralybot.util import formatting
+
 replacements = {
-    'a': '?',
+    'a': 'ɐ',
     'b': 'q',
-    'c': '?',
+    'c': 'ɔ',
     'd': 'p',
-    'e': '?',
-    'f': '?',
-    'g': '?',
-    'h': '?',
-    'i': '?',
-    'j': '?',
-    'k': '?',
-    'l': '?',
-    'm': '?',
+    'e': 'ǝ',
+    'f': 'ɟ',
+    'g': 'ƃ',
+    'h': 'ɥ',
+    'i': 'ᴉ',
+    'j': 'ɾ',
+    'k': 'ʞ',
+    'l': 'ן',
+    'm': 'ɯ',
     'n': 'u',
     'o': 'o',
     'p': 'd',
     'q': 'b',
-    'r': '?',
+    'r': 'ɹ',
     's': 's',
-    't': '?',
+    't': 'ʇ',
     'u': 'n',
-    'v': '?',
-    'w': '?',
+    'v': 'ʌ',
+    'w': 'ʍ',
     'x': 'x',
-    'y': '?',
+    'y': 'ʎ',
     'z': 'z',
-    '?': '�',
-    '.': '?',
+    '?': '¿',
+    '.': '˙',
     ',': '\'',
     '(': ')',
     '<': '>',
     '[': ']',
     '{': '}',
     '\'': ',',
-    '_': '?'}
+    '_': '‾'}
 
 # append an inverted form of replacements to itself, so flipping works both ways
 replacements.update(dict((v, k) for k, v in replacements.items()))
 
-flippers = ["( ????)?", "(?�?�)?", "( ???? )?"]
+flippers = ["( ﾉ⊙︵⊙）ﾉ", "(╯°□°）╯", "( ﾉ♉︵♉ ）ﾉ"]
 
 
 @hook.command
@@ -49,8 +54,8 @@ def flip(text, reply):
 
 @hook.command(autohelp=False)
 def table(text, message):
-    """<text> -- (?�?�)?? <?x??>"""
+    """<text> -- (╯°□°）╯︵ <ʇxǝʇ>"""
     if text:
-        message(random.choice(flippers) + " ? " + formatting.multi_replace(text[::-1].lower(), replacements))
+        message(random.choice(flippers) + " ︵ " + formatting.multi_replace(text[::-1].lower(), replacements))
     else:
-        message(random.choice(flippers) + " ? ???")
+        message(random.choice(flippers) + " ︵ ┻━┻")
