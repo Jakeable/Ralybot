@@ -1,8 +1,8 @@
 import re
 import requests
 
-from cloudbot import hook
-from cloudbot.util import web, formatting, timeformat
+from ralybot import hook
+from ralybot.util import web, formatting, timeformat
 
 SC_RE = re.compile(r'(.*:)//(www.)?(soundcloud.com|snd.sc)(.*)', re.I)
 API_BASE = 'http://api.soundcloud.com/{}/'
@@ -13,6 +13,7 @@ class APIError(Exception):
 
 
 # DATA FETCHING
+
 def get_with_search(endpoint, term):
     """
     Searches :endpoint on SoundCloud for :term and returns an item.
@@ -57,6 +58,7 @@ def get_with_url(url):
 
 
 # DATA FORMATTING
+
 def format_track(track, show_url=True):
     """
     Takes a SoundCloud track item and returns a formatted string.
@@ -146,7 +148,8 @@ def format_group(group, show_url=True):
     return out
 
 
-# CLOUDBOT HOOKS
+# RALYBOT HOOKS
+
 @hook.on_start()
 def load_key(bot):
     global api_key

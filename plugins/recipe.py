@@ -17,8 +17,8 @@ import microdata
 import requests
 import bs4
 
-from cloudbot import hook
-from cloudbot.util import web
+from ralybot import hook
+from ralybot.util import web
 
 BASE_URL = "http://www.cookstr.com"
 SEARCH_URL = BASE_URL + "/searches"

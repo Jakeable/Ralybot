@@ -1,6 +1,6 @@
 import requests
 
-from cloudbot import hook
+from ralybot import hook
 
 
 max_length = 100

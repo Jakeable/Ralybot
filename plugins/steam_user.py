@@ -1,8 +1,8 @@
 import requests
 from lxml import etree
 
-from cloudbot import hook
-from cloudbot.util import formatting
+from ralybot import hook
+from ralybot.util import formatting
 
 # security
 parser = etree.XMLParser(resolve_entities=False, no_network=True)

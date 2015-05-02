@@ -4,9 +4,9 @@ from sqlalchemy import Table, Column, String, Boolean, DateTime
 
 from sqlalchemy.sql import select
 
-from cloudbot import hook
-from cloudbot.util import timeformat, database
-from cloudbot.event import EventType
+from ralybot import hook
+from ralybot.util import timeformat, database
+from ralybot.event import EventType
 
 table = Table(
     'tells',
@@ -98,8 +98,8 @@ def tell_check(conn, nick):
 @hook.event(EventType.message, singlethread=True)
 def tellinput(event, conn, db, nick, notice):
     """
-    :type event: cloudbot.event.Event
-    :type conn: cloudbot.client.Client
+    :type event: ralybot.event.Event
+    :type conn: ralybot.client.Client
     :type db: sqlalchemy.orm.Session
     """
     if 'showtells' in event.content.lower():
@@ -159,7 +159,7 @@ def tell_cmd(text, nick, db, notice, conn):
     sender = nick
 
     if target == sender.lower():
-        notice("Have you looked in a mirror lately?")
+        notice("Sorry, but you can't send messages to yourself.")
         return
 
     if target.lower() == conn.nick.lower():

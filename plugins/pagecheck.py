@@ -4,7 +4,7 @@ from bs4 import BeautifulSoup
 import requests
 import requests.exceptions
 
-from cloudbot import hook
+from ralybot import hook
 
 
 @hook.command("down", "offline", "up")
@@ -41,7 +41,7 @@ def isup(text):
     try:
         response = requests.get('http://isup.me/' + domain)
     except requests.exceptions.ConnectionError:
-        return "Failed to get status."
+        return "Failed to get status of {}. Maybe isup.me is down?".format(url)
     if response.status_code != requests.codes.ok:
         return "Failed to get status."
 
@@ -54,4 +54,4 @@ def isup(text):
     elif "is up" in content:
         return "It's just you. {} is \x02\x033up\x02\x0f.".format(url)
     else:
-        return "Huh? That doesn't look like a site on the interweb."
+        return "Huh? That doesn't look like a site on the Interwebs."

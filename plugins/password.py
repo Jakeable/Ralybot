@@ -1,7 +1,7 @@
 import string
 import random as std_random
 
-from cloudbot import hook
+from ralybot import hook
 
 
 try:

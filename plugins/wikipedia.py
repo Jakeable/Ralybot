@@ -1,12 +1,11 @@
-"""Searches wikipedia and returns first sentence of article
-Scaevolus 2009"""
+"""Searches Wikipedia and returns the first sentence of an article."""
 
 import re
 import requests
 from lxml import etree
 
-from cloudbot import hook
-from cloudbot.util import formatting
+from ralybot import hook
+from ralybot.util import formatting
 
 # security
 parser = etree.XMLParser(resolve_entities=False, no_network=True)
@@ -21,7 +20,6 @@ paren_re = re.compile('\s*\(.*\)$')
 @hook.command("wiki", "wikipedia", "w")
 def wiki(text):
     """wiki <phrase> -- Gets first sentence of Wikipedia article on <phrase>."""
-
     try:
         request = requests.get(search_url, params={'search': text.strip()})
         request.raise_for_status()

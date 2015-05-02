@@ -15,7 +15,7 @@ License:
 
 import requests
 
-from cloudbot import hook
+from ralybot import hook
 
 API_URL = "http://octopart.com/api/v3/parts/search"
 

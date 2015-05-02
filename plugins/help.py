@@ -2,17 +2,17 @@ from operator import attrgetter
 import asyncio
 import re
 
-from cloudbot import hook
-from cloudbot.util import formatting
+from ralybot import hook
+from ralybot.util import formatting
     
 
 @asyncio.coroutine
 @hook.command("help", autohelp=False)
 def help_command(text, chan, conn, bot, notice, message, has_permission):
-    """[command] - gives help for [command], or lists all available commands if no command is specified
+    """[command] - gives help for [command], or lists all available commands if no command is specified.
     :type text: str
-    :type conn: cloudbot.client.Client
-    :type bot: cloudbot.bot.CloudBot
+    :type conn: ralybot.client.Client
+    :type bot: ralybot.bot.Ralybot
     """
     if text:
         searching_for = text.lower().strip()
@@ -67,6 +67,6 @@ def help_command(text, chan, conn, bot, notice, message, has_permission):
             if chan[:1] == "#":
                 notice(line)
             else:
-                #This is an user in this case.
+                # This is a user in this case.
                 message(line)
         notice("For more detailed information on a certain command, use {}help <command-name>, without the brackets.".format(conn.config["command_prefix"]))

@@ -5,9 +5,9 @@ import logging
 import re
 from collections import deque
 
-from cloudbot import hook
+from ralybot import hook
 
-logger = logging.getLogger("cloudbot")
+logger = logging.getLogger("ralybot")
 
 nick_re = re.compile(":(.+?)!")
 
@@ -32,7 +32,7 @@ def bot_joined_channel(conn, chan):
 @hook.irc_raw("KICK")
 def on_kick(conn, chan, target, loop):
     """
-    :type conn: cloudbot.client.Client
+    :type conn: ralybot.client.Client
     :type chan: str
     :type nick: str
     """
@@ -50,7 +50,7 @@ def on_kick(conn, chan, target, loop):
 def on_nick(irc_paramlist, conn, irc_raw):
     """
     :type irc_paramlist: list[str]
-    :type conn: cloudbot.client.Client
+    :type conn: ralybot.client.Client
     :type irc_raw: str
     """
     old_nick = nick_re.search(irc_raw).group(1)
@@ -71,7 +71,7 @@ def on_nick(irc_paramlist, conn, irc_raw):
 @hook.irc_raw("JOIN")
 def on_join(conn, chan, target):
     """
-    :type conn: cloudbot.client.Client
+    :type conn: ralybot.client.Client
     :type chan: str
     :type nick: str
     """
@@ -83,7 +83,7 @@ def on_join(conn, chan, target):
 @hook.irc_raw("PART")
 def on_join(conn, chan, target):
     """
-    :type conn: cloudbot.client.Client
+    :type conn: ralybot.client.Client
     :type chan: str
     :type nick: str
     """

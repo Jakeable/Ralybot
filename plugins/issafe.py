@@ -1,23 +1,17 @@
 """
 issafe.py
-<<<<<<< HEAD
-Check the Google Safe Browsing list to see a website's safety rating.
-Created By:
-    - Foxlet <http://furcode.tk/>
-=======
 
 Check the Google Safe Browsing list to see a website's safety rating.
 
 Created By:
     - Foxlet <http://furcode.tk/>
 
->>>>>>> 708845caf10c715cd8bc2e1708fb5e3bc631b351
 License:
     GNU General Public License (Version 3)
 """
 
-from cloudbot import hook
-import cloudbot
+from ralybot import hook
+import ralybot
 import requests
 from urllib.parse import urlparse
 
@@ -36,7 +30,7 @@ def issafe(text):
     if urlparse(text).scheme not in ['https', 'http']:
         return "Check your URL (it should be a complete URI)."
 
-    parsed = requests.get(API_SB, params={"url": text, "client": "cloudbot", "key": dev_key, "pver": "3.1", "appver": str(cloudbot.__version__)})
+    parsed = requests.get(API_SB, params={"url": text, "client": "ralybot", "key": dev_key, "pver": "3.1", "appver": str(ralybot.__version__)})
 
     if parsed.status_code == 204:
         condition = "\x02{}\x02 is safe.".format(text)

@@ -1,7 +1,7 @@
 from sqlalchemy import Table, Column, UniqueConstraint, String
 
-from cloudbot import hook
-from cloudbot.util import database
+from ralybot import hook
+from ralybot.util import database
 
 table = Table(
     "regex_chans",
@@ -126,9 +126,9 @@ def regexstatus(text, conn, chan):
     status = status_cache.get((conn.name, chan))
     if status is None:
         if default_enabled:
-            status = "ENABLED"
+            status = "Enabled"
         else:
-            status = "DISABLED"
+            status = "Disabled"
     return "Regex status for {}: {}".format(channel, status)
 
 

@@ -4,8 +4,8 @@ import random
 from imgurpython import ImgurClient
 from contextlib import suppress
 
-from cloudbot import hook
-from cloudbot.util import web
+from ralybot import hook
+from ralybot.util import web
 
 
 # imgurpython has an issue where it does not allow anonymous album creation

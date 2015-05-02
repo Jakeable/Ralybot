@@ -1,5 +1,5 @@
-from cloudbot import hook
-from cloudbot.util import http, timeformat
+from ralybot import hook
+from ralybot.util import http, timeformat
 
 
 @hook.regex(r'vimeo.com/([0-9]+)')

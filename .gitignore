@@ -50,7 +50,7 @@ docs/_build/
 # PyBuilder
 target/
 
-# Cloudbot
+# Ralybot
 persist/
 logs/
 config.json

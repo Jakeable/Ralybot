@@ -5,7 +5,7 @@ import threading
 import traceback
 import sys
 
-import cloudbot
+import ralybot
 
 if True:
     try:
@@ -22,8 +22,8 @@ try:
 except ImportError:
     objgraph = None
 
-from cloudbot import hook
-from cloudbot.util import web
+from ralybot import hook
+from ralybot.util import web
 
 
 def get_name(thread_id):

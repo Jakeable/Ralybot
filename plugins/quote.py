@@ -2,8 +2,8 @@ import random
 import re
 import time
 
-from cloudbot import hook
-from cloudbot.util import database
+from ralybot import hook
+from ralybot.util import database
 
 from sqlalchemy import select
 from sqlalchemy import Table, Column, String, PrimaryKeyConstraint

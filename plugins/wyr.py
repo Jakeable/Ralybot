@@ -16,7 +16,7 @@ License:
 
 import requests
 
-from cloudbot import hook
+from ralybot import hook
 
 API_URL = "http://www.rrrather.com/botapi"
 FILTERED_TAGS = ('rape', 'gross', 'sex')

@@ -15,8 +15,8 @@ License:
 
 import requests
 
-from cloudbot import hook
-from cloudbot.util import formatting, filesize
+from ralybot import hook
+from ralybot.util import formatting, filesize
 
 API_CS = 'https://www.googleapis.com/customsearch/v1'
 

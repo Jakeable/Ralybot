@@ -9,9 +9,9 @@ import os.path
 import geoip2.database
 import geoip2.errors
 
-from cloudbot import hook
+from ralybot import hook
 
-logger = logging.getLogger("cloudbot")
+logger = logging.getLogger("ralybot")
 
 DB_URL = "http://geolite.maxmind.com/download/geoip/database/GeoLite2-City.mmdb.gz"
 PATH = "./data/GeoLite2-City.mmdb"
@@ -31,7 +31,7 @@ def fetch_db():
 
 def update_db():
     """
-    Updates the DB.
+    Updates the database.
     """
     if os.path.isfile(PATH):
         # check if file is over 2 weeks old
@@ -54,8 +54,8 @@ def update_db():
 
 def check_db(loop):
     """
-    runs update_db in an executor thread and sets geoip_reader to the result
-    if this is run while update_db is already executing bad things will happen
+    Runs update_db in an executor thread and sets geoip_reader to the result.
+    If this is run while update_db is already executing bad things will happen.
     """
     global geoip_reader
     if not geoip_reader:

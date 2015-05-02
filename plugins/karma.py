@@ -4,8 +4,8 @@ import re
 from sqlalchemy import Table, Column, Integer, String, PrimaryKeyConstraint
 from sqlalchemy import select
 
-from cloudbot import hook
-from cloudbot.util import timeformat, formatting, database
+from ralybot import hook
+from ralybot.util import timeformat, formatting, database
 
 
 CAN_DOWNVOTE = False

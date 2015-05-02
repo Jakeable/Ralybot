@@ -3,8 +3,8 @@ import re
 import requests
 from lxml import html
 
-from cloudbot import hook
-from cloudbot.util import web
+from ralybot import hook
+from ralybot.util import web
 
 
 @hook.command("metacritic", "mc")

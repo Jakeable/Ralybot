@@ -1,6 +1,6 @@
 # How to contribute
 
-Heya, Luke here. It's awesome that you want to help contribute to CloudBot!
+Heya, Kamran here. It's awesome that you want to help contribute to Ralybot!
 This should be as easy as possible for you but there are a few things to consider when contributing.
 
 The following guidelines for contribution should be followed if you want to submit a pull request. If you have any troubles, just come and ask us for help on our IRC channel.
@@ -11,17 +11,17 @@ The following guidelines for contribution should be followed if you want to subm
 * Fork the repository
 * Edit the files, add new files
 * Check the files with [`pep8`](https://pypi.python.org/pypi/pep8), fix any reported errors
-* Check that the files work as expected in CloudBot
+* Check that the files work as expected in Ralybot
 * Create a new branch with a descriptive name for your feature (optional)
 * Commit changes, push to your fork on GitHub
 * Create a new pull request, provide a short summary of changes in the title line, with more information in the description field.
-* After submitting the pull request, join the IRC channel (irc.esper.net #cloudbot) and give us a link so we know you submitted it.
+* After submitting the pull request, join the IRC channel (irc.esper.net #ralybot) and give us a link so we know you submitted it.
 * After discussion, your pull request will be accepted or rejected.
 
 ## How to prepare
 
 * You need a [GitHub account](https://github.com/signup/free)
-* Submit an [issue ticket](https://github.com/ClouDev/CloudBot/issues) for your issue if there is no one yet.
+* Submit an [issue ticket](https://github.com/KamranMackey/Ralybot/issues) for your issue if there is no one yet.
   * Try to describe the issue and include steps to reproduce if it's a bug.
 * If you are able and want to fix this, fork the repository on GitHub
 
@@ -37,7 +37,7 @@ The following guidelines for contribution should be followed if you want to subm
 ## Submit Changes
 
 * Push your changes to a topic branch in your fork of the repository.
-* Open a pull request to the original repository and choose the `python3.4` branch.
+* Open a pull request to the original repository and choose the `master` branch.
 	_Advanced users may use [`hub`](https://github.com/defunkt/hub#git-pull-request) gem for that._
 * If not done in commit messages (which you really should do) please reference and update your issue with the code changes. But _please do not close the issue yourself_.
 _Notice: You can [turn your previously filed issues into a pull-request here](http://issue2pr.herokuapp.com/)._

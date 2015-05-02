@@ -2,7 +2,7 @@ from enchant.checker import SpellChecker
 from enchant.tokenize import EmailFilter, URLFilter
 from enchant import Dict
 
-from cloudbot import hook
+from ralybot import hook
 
 locale = "en_US"
 en_dict = Dict(locale)

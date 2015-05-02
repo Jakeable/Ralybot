@@ -3,7 +3,7 @@ import re
 import requests
 from lxml import html
 
-from cloudbot import hook
+from ralybot import hook
 
 speedtest_re = re.compile(r'.*://www.speedtest.net/my-result/([0-9]+)?.*', re.I)
 base_url = "http://www.speedtest.net/my-result/{}"

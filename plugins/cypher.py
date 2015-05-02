@@ -18,7 +18,7 @@ License:
 import base64
 import binascii
 
-from cloudbot import hook
+from ralybot import hook
 
 
 def encode(password, text):

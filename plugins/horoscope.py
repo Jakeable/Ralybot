@@ -3,8 +3,8 @@
 import requests
 from bs4 import BeautifulSoup
 
-from cloudbot import hook
-from cloudbot.util import formatting
+from ralybot import hook
+from ralybot.util import formatting
 
 
 @hook.on_start()

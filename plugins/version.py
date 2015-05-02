@@ -1,7 +1,7 @@
-import cloudbot
-from cloudbot import hook
+import ralybot
+from ralybot import hook
 
 @hook.command("ver", "version", autohelp=False)
 def version(text, conn):
-    """-- Displays the bot's version number."""
-    return "{} is currently running bot version {}." .format(conn.nick, cloudbot.__version__)
+    """-- Displays Ralybot's current version number."""
+    return "{} is currently at version {}." .format(conn.nick, ralybot.__version__)

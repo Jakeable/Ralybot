@@ -2,9 +2,8 @@ import requests
 import re
 from bs4 import BeautifulSoup
 
-from cloudbot import hook
-from cloudbot.util import web, formatting, colors
-
+from ralybot import hook
+from ralybot.util import web, formatting, colors
 
 SEARCH_URL = "http://www.amazon.{}/s/"
 REGION = "com"
@@ -66,7 +65,7 @@ def amazon(text, _parsed=False):
     if item.find('i', {'class': 'sx-bestseller-badge-primary'}):
         tags.append("$(b)Bestseller$(b)")
 
-    if re.search(r"(Kostenlose Lieferung|Livraison gratuite|FREE Shipping|EnvÃ­o GRATIS"
+    if re.search(r"(Kostenlose Lieferung|Livraison gratuite|FREE Shipping|Envío GRATIS"
                  r"|Spedizione gratuita)", item.text, re.I):
         tags.append("$(b)Free Shipping$(b)")
 

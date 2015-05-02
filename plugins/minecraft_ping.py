@@ -2,7 +2,7 @@ import socket
 
 from mcstatus import MinecraftServer
 
-from cloudbot import hook
+from ralybot import hook
 
 mc_colors = [('\xa7f', '\x0300'), ('\xa70', '\x0301'), ('\xa71', '\x0302'), ('\xa72', '\x0303'),
              ('\xa7c', '\x0304'), ('\xa74', '\x0305'), ('\xa75', '\x0306'), ('\xa76', '\x0307'),
@@ -43,27 +43,12 @@ def mcping(text):
         description = format_colors(" ".join(s.description["text"].split()))
     else:
         description = format_colors(" ".join(s.description.split()))
-<<<<<<< HEAD
 
     if s.latency:
         return "{}\x0f - \x02{}\x0f - \x02{:.1f}ms\x02" \
-            " - \x02{}/{}\x02 players".format(description, s.version.name, s.latency,
+            " - \x02{}/{}\x02 players".format(description, s.version.name_clean, s.latency,
                                               s.players.online, s.players.max).replace("\n", "\x0f - ")
     else:
         return "{}\x0f - \x02{}\x0f" \
-            " - \x02{}/{}\x02 players".format(description, s.version.name,
-=======
-        
-    # I really hate people for putting colors IN THE VERSION
-    # WTF REALLY THIS IS A THING NOW?
-    version = format_colors(s.version.name)
-
-    if s.latency:
-        return "{}\x0f - \x02{}\x0f - \x02{:.1f}ms\x02" \
-            " - \x02{}/{}\x02 players".format(description, version, s.latency,
-                                              s.players.online, s.players.max).replace("\n", "\x0f - ")
-    else:
-        return "{}\x0f - \x02{}\x0f" \
-            " - \x02{}/{}\x02 players".format(description, version,
->>>>>>> 708845caf10c715cd8bc2e1708fb5e3bc631b351
+            " - \x02{}/{}\x02 players".format(description, s.version.name_clean,
                                               s.players.online, s.players.max).replace("\n", "\x0f - ")

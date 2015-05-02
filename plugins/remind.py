@@ -19,11 +19,11 @@ import asyncio
 
 from sqlalchemy import Table, Column, String, DateTime, PrimaryKeyConstraint
 
-from cloudbot import hook
-from cloudbot.util import database
-from cloudbot.util.timeparse import time_parse
-from cloudbot.util.timeformat import format_time, time_since
-from cloudbot.util import colors
+from ralybot import hook
+from ralybot.util import database
+from ralybot.util.timeparse import time_parse
+from ralybot.util.timeformat import format_time, time_since
+from ralybot.util import colors
 
 
 table = Table(

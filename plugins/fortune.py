@@ -3,7 +3,7 @@ import codecs
 import random
 import asyncio
 
-from cloudbot import hook
+from ralybot import hook
 
 
 @hook.on_start()

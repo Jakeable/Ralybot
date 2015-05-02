@@ -1,7 +1,7 @@
 import requests
 import time
 
-from cloudbot import hook
+from ralybot import hook
 
 # Define some constants
 base_url = 'https://maps.googleapis.com/maps/api/'

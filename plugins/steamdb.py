@@ -3,8 +3,8 @@ import re
 import requests
 import bs4
 
-from cloudbot import hook
-from cloudbot.util import web
+from ralybot import hook
+from ralybot.util import web
 
 # different forks of cloudflare-scrape have different package layouts
 try:
@@ -29,7 +29,7 @@ PLAYED_RE = re.compile(r"(.*)\((.*)%\)")
 
 def get_data(user, currency="us"):
     """
-    Takes a steam user ID and returns a dict containing info about the games the user owns
+    Takes a user's Steam Community ID and returns a dict containing info about the games the user owns.
     :type user: str
     :type currency: str
     :return: dict

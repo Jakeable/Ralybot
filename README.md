@@ -1,6 +1,6 @@
 # Ralybot [![Documentation Status](https://readthedocs.org/projects/ralybot/badge/?version=latest)](https://readthedocs.org/projects/ralybot/?badge=latest)
 
-Ralybot is a simple, fast, expandable and open-source Python IRC bot, and is a fork of another IRC bot called [CloudBot](https://github.com/CloudBotIRC/CloudBot/). Its documentation is on [Read The Docs](https://ralybot.readthedocs.org/en/latest/). I'd also like to mention that Ralybot now has its own Trello board set up. You can find the board [here](https://trello.com/b/olPXxniK/ralybot).
+Ralybot is a simple, fast, expandable and open-source Python IRC bot. Its documentation is on [Read The Docs](https://ralybot.readthedocs.org/en/latest/). I'd also like to mention that Ralybot now has its own Trello board set up. You can find the board [here](https://trello.com/b/olPXxniK/ralybot).
 
 **Note**: The documentation is still a work-in-progress and is not finished yet. You can find the source code for the documentation at the [Ralybot-Docs](https://github.com/KamranMackey/Ralybot-Docs) GitHub repository.
 
@@ -25,14 +25,14 @@ Before you run the bot, make sure you rename `config.default.json` to `config.js
 Once you have installed the required dependencies and renamed the config file, you can run the bot! Make sure you are in the correct folder and run the following command in a terminal:
 
 ```
-python3.4 -m Ralybot
+python3.4 -m ralybot
 ```
 
-Note that you can also run the `cloudbot/__main__.py` file directly, which will work from any directory.
+Note that you can also run the `ralybot/__main__.py` file directly, which will work from any directory.
 ```
-python3.4 Ralybot/cloudbot/__main__.py
+python3.4 Ralybot/ralybot/__main__.py
 ```
-Specify the path as /path/to/repository/cloudbot/__main__.py, where `cloudbot` is inside the repository directory.
+Specify the path as /path/to/repository/ralybot/__main__.py, where `ralybot` is inside the repository directory.
 
 ## Getting help with Ralybot
 
@@ -41,17 +41,17 @@ Ralybot will soon be moving to a different issue tracker called [JIRA](https://w
 
 ### Documentation
 
-The Ralybot documentation is currently somewhat outdated and may not be correct. If you need any help, please visit our [IRC channel](irc://irc.esper.net/cloudbot) and we will be happy to assist you.
+The Ralybot documentation is currently somewhat outdated and may not be correct. If you need any help, please visit our [IRC channel](irc://irc.esper.net/ralybot) and we will be happy to assist you.
 
 To write your own plugins, visit the [Plugins Wiki Page](https://github.com/CloudBotIRC/CloudBotRefresh/wiki/Writing-Refresh-Modules).
 
-More at the [Wiki Main Page](https://github.com/CloudBotIRC/CloudBotRefresh/wiki).
+More information is at the [Wiki Main Page](https://github.com/CloudBotIRC/CloudBotRefresh/wiki).
 
 ### Support
 
 The developers reside in [#Ralybot](irc://irc.esper.net/Ralybot) on the [EsperNet](http://esper.net) IRC network, and would be glad to help you.
 
-If you think you have found a bug/have a idea/suggestion, please **open a issue** here on Github and contact us on IRC!
+If you think you have found a bug/have a idea/suggestion, please **open a issue** here on GitHub and contact us on IRC!
 
 ## Changelog
 
@@ -65,8 +65,7 @@ Ralybot is **licensed** under the **GPL v3** license. The terms are as follows.
 
     Ralybot
 
-    Copyright © 2011-2015 Luke Rogers / CloudBot Project
-    Copyright © 2015 Ralybot Team
+    Copyright © 2015 Kamran Mackey / Ralybot Project
 
     Ralybot is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by

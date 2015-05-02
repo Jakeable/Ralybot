@@ -1,8 +1,8 @@
 from re import findall
 
-from cloudbot import hook
+from ralybot import hook
 
-from cloudbot.util.formatting import pluralize, get_text_list
+from ralybot.util.formatting import pluralize, get_text_list
 
 
 polls = {}

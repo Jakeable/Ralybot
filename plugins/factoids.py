@@ -5,8 +5,8 @@ import re
 from sqlalchemy import Table, Column, String
 import requests
 
-from cloudbot import hook
-from cloudbot.util import database, colors, web
+from ralybot import hook
+from ralybot.util import database, colors, web
 
 
 re_lineends = re.compile(r'[\r\n]*')

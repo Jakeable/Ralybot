@@ -3,8 +3,8 @@ import re
 import requests
 from lxml import html
 
-from cloudbot import hook
-from cloudbot.util import formatting, web
+from ralybot import hook
+from ralybot.util import formatting, web
 
 
 search_url = "http://search.atomz.com/search/?sp_a=00062d45-sp00000000"

@@ -23,6 +23,6 @@ ln -sf /vagrant /home/vagrant/bot
 cat > /usr/local/bin/start-bot <<- _EOF_
     #!/usr/bin/env bash
     cd /home/vagrant/bot
-    python3 -m cloudbot
+    python3 -m ralybot
 _EOF_
 chmod +x /usr/local/bin/start-bot

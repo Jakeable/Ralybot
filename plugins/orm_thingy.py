@@ -1,7 +1,7 @@
 from sqlalchemy import Column, Integer, String, Sequence
 
-from cloudbot import hook
-from cloudbot.util.database import base
+from ralybot import hook
+from ralybot.util.database import base
 
 
 class User(base):

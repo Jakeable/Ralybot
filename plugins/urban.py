@@ -2,8 +2,8 @@ import random
 
 import requests
 
-from cloudbot import hook
-from cloudbot.util import formatting
+from ralybot import hook
+from ralybot.util import formatting
 
 
 base_url = 'http://api.urbandictionary.com/v0'

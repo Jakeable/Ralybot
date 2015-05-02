@@ -5,7 +5,7 @@ import re
 import asyncio
 import random
 
-from cloudbot import hook
+from ralybot import hook
 
 BUFFER_SIZE = 5000
 MAX_STEPS = 1000000

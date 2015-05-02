@@ -1,7 +1,7 @@
 import asyncio
 import socket
 
-from cloudbot import hook
+from ralybot import hook
 
 socket.setdefaulttimeout(10)
 
@@ -12,7 +12,7 @@ socket.setdefaulttimeout(10)
 def invite(irc_paramlist, conn):
     """
     :type irc_paramlist: list[str]
-    :type conn: cloudbot.client.Client
+    :type conn: ralybot.client.Client
     """
     invite_join = conn.config.get('invite_join', True)
     if invite_join:
@@ -24,8 +24,8 @@ def invite(irc_paramlist, conn):
 @hook.irc_raw('004')
 def onjoin(conn, bot):
     """
-    :type conn: cloudbot.clients.clients.IrcClient
-    :type bot: cloudbot.bot.CloudBot
+    :type conn: ralybot.clients.clients.IrcClient
+    :type bot: ralybot.bot.Ralybot
     """
     bot.logger.info("[{}|misc] The bot is sending join commands for the network.".format(conn.name))
     nickserv = conn.config.get('nickserv')
@@ -67,7 +67,7 @@ def onjoin(conn, bot):
 @hook.irc_raw('004')
 def keep_alive(conn):
     """
-    :type conn: cloudbot.clients.clients.IrcClient
+    :type conn: ralybot.clients.clients.IrcClient
     """
     keepalive = conn.config.get('keep_alive', False)
     if keepalive:

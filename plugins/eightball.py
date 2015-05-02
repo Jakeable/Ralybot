@@ -3,8 +3,8 @@ import asyncio
 import codecs
 import random
 
-from cloudbot import hook
-from cloudbot.util import colors
+from ralybot import hook
+from ralybot.util import colors
 
 
 @hook.on_start()

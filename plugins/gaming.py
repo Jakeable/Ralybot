@@ -4,7 +4,7 @@ gaming.py
 Dice, coins, and random generation for gaming.
 
 Modified By:
-    - Luke Rogers <https://github.com/lukeroge>
+    - Kamran Mackey <https://github.com/KamranMackey>
 
 License:
     GPL v3
@@ -14,7 +14,7 @@ import asyncio
 import random
 import re
 
-from cloudbot import hook
+from ralybot import hook
 
 
 whitespace_re = re.compile(r'\s+')
@@ -99,8 +99,8 @@ def dice(text, notice):
                     rolls += [str(-x) for x in d]
                     total -= sum(d)
             except OverflowError:
-                # I have never seen this happen. If you make this happen, you win a cookie
-                return "Thanks for overflowing a float, jerk >:["
+                # I have never seen this happen. If you make this happen, you win a cookie.
+                return "Thanks for overflowing a float, jerk >:("
 
     if desc:
         return "{}: {} ({})".format(desc.strip(), total, ", ".join(rolls))

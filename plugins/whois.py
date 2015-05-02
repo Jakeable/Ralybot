@@ -6,7 +6,7 @@ Provides a command to allow users to look up information on domain names.
 import pythonwhois
 from contextlib import suppress
 
-from cloudbot import hook
+from ralybot import hook
 
 
 @hook.command

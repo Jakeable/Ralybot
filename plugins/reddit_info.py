@@ -3,12 +3,12 @@ import re
 
 from datetime import datetime
 from bs4 import BeautifulSoup
-from cloudbot import hook
+from ralybot import hook
 
 user_url = "http://reddit.com/user/{}/"
 subreddit_url = "http://reddit.com/r/{}/"
-# This user agent should be unique for your CloudBot instance.
-agent = {"User-Agent":"Ralybot a cloudbot (IRCbot) implementation for IRC by /u/KamranMackey"}
+# This user agent should be unique for your Ralybot instance.
+agent = {"User-Agent":"Ralybot (IRC Bot) for IRC by /u/KamranMackey"}
 
 
 def statuscheck(status, item):

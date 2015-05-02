@@ -4,8 +4,8 @@ import urllib.parse
 import requests
 from lxml import etree
 
-from cloudbot import hook
-from cloudbot.util import web, formatting
+from ralybot import hook
+from ralybot.util import web, formatting
 
 # security
 parser = etree.XMLParser(resolve_entities=False, no_network=True)
@@ -19,7 +19,7 @@ def wolframalpha(text, bot):
     """<query> -- Computes <query> using Wolfram Alpha."""
     api_key = bot.config.get("api_keys", {}).get("wolframalpha", None)
     if not api_key:
-        return "error: missing api key"
+        return "Error: This command requires a Wolfram Alpha API key."
 
     params = {
         'input': text,

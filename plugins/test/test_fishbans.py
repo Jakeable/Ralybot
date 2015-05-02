@@ -31,7 +31,7 @@ reply_error = "Could not fetch ban data from the Fishbans API:"
 
 
 class DummyBot():
-    user_agent = "CloudBot/3.0"
+    user_agent = "Ralybot/1.0"
 
 
 class TestBans:

@@ -5,8 +5,8 @@ import random
 import asyncio
 import re
 
-from cloudbot import hook
-from cloudbot.util import textgen
+from ralybot import hook
+from ralybot.util import textgen
 
 nick_re = re.compile("^[A-Za-z0-9_|.\-\]\[\{\}]*$", re.I)
 
@@ -17,9 +17,8 @@ cookies = ['Chocolate Chip', 'Oatmeal', 'Sugar', 'Oatmeal Raisin', 'Macadamia Nu
            'Biscotti', 'Oatmeal Cranberry', 'Chocolate Fudge', 'Peanut Butter', 'Pumpkin', 'Lemon Bar',
            'Chocolate Oatmeal Fudge', 'Toffee Peanut', 'Danish Sugar', 'Triple Chocolate', 'Oreo']
 
-# <Luke> Hey guys, any good ideas for plugins?
-# <User> I don't know, something that lists every potato known to man?
-# <Luke> BRILLIANT
+# POTATOES!!! MMM!!!
+
 potatoes = ['AC Belmont', 'AC Blue Pride', 'AC Brador', 'AC Chaleur', 'AC Domino', 'AC Dubuc', 'AC Glacier Chip',
             'AC Maple Gold', 'AC Novachip', 'AC Peregrine Red', 'AC Ptarmigan', 'AC Red Island', 'AC Saguenor',
             'AC Stampede Russet', 'AC Sunbury', 'Abeille', 'Abnaki', 'Acadia', 'Acadia Russet', 'Accent',
@@ -63,7 +62,7 @@ def is_valid(target):
 @hook.on_start()
 def load_foods(bot):
     """
-    :type bot: cloudbot.bot.CloudBot
+    :type bot: ralybot.bot.Ralybot
     """
     global sandwich_data, taco_data
 

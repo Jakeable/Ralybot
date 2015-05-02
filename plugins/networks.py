@@ -1,6 +1,6 @@
-from cloudbot import hook
+from ralybot import hook
 
-from cloudbot.util import formatting
+from ralybot.util import formatting
 
 @hook.command("networks", autohelp = False)
 def networks(text, bot):

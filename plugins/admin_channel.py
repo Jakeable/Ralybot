@@ -1,4 +1,4 @@
-from cloudbot import hook
+from ralybot import hook
 
 
 def mode_cmd(mode, text, text_inp, chan, conn, notice):

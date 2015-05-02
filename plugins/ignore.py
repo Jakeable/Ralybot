@@ -3,8 +3,8 @@ from fnmatch import fnmatch
 
 from sqlalchemy import Table, Column, UniqueConstraint, PrimaryKeyConstraint, String, Boolean
 
-from cloudbot import hook
-from cloudbot.util import database
+from ralybot import hook
+from ralybot.util import database
 
 
 table = Table(
@@ -68,9 +68,9 @@ def is_ignored(conn, chan, mask):
 @hook.sieve(priority=50)
 def ignore_sieve(bot, event, _hook):
     """
-    :type bot: cloudbot.bot.CloudBot
-    :type event: cloudbot.event.Event
-    :type _hook: cloudbot.plugin.Hook
+    :type bot: ralybot.bot.Ralybot
+    :type event: ralybot.event.Event
+    :type _hook: ralybot.plugin.Hook
     """
     # don't block event hooks
     if _hook.type in ("irc_raw", "event"):
@@ -101,7 +101,7 @@ def ignore(text, db, chan, conn, notice):
     if is_ignored(conn.name, chan, target):
         notice("{} is already ignored in {}.".format(target, chan))
     else:
-        notice("{} has been ignored in {}.".format(target, chan))
+        notice("I have sucessfully ignored {} in {}.".format(target, chan))
         add_ignore(db, conn.name, chan, target)
 
 
@@ -115,7 +115,7 @@ def unignore(text, db, chan, conn, notice):
     if not is_ignored(conn.name, chan, target):
         notice("{} is not ignored in {}.".format(target, chan))
     else:
-        notice("{} has been un-ignored in {}.".format(target, chan))
+        notice("I have sucessfully un-ignored {} in {}.".format(target, chan))
         remove_ignore(db, conn.name, chan, target)
 
 

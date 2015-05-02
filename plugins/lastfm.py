@@ -5,8 +5,8 @@ import random
 
 from sqlalchemy import Table, Column, PrimaryKeyConstraint, String
 
-from cloudbot import hook
-from cloudbot.util import timeformat, web, database
+from ralybot import hook
+from ralybot.util import timeformat, web, database
 
 api_url = "http://ws.audioscrobbler.com/2.0/?format=json"
 
@@ -47,7 +47,7 @@ def lastfm(text, nick, db, bot, notice):
     """[user] [dontsave] - displays the now playing (or last played) track of LastFM user [user]"""
     api_key = bot.config.get("api_keys", {}).get("lastfm")
     if not api_key:
-        return "No last.fm API key set."
+        return "Error: This command requires a LastFM API key."
 
     # check if the user asked us not to save his details
     dontsave = text.endswith(" dontsave")
@@ -127,9 +127,9 @@ def lastfmcompare(text, nick, bot, db):
     """[user] ([user] optional) - displays the now playing (or last played) track of LastFM user [user]"""
     api_key = bot.config.get("api_keys", {}).get("lastfm")
     if not api_key:
-        return "No last.fm API key set."
+        return "Error: This command requires a LastFM API key."
     if not text:
-        return("please specify a lastfm username to compare")
+        return("Please specify a LastFM username to compare.")
     try:
         user1, user2 = text.split()
     except:
@@ -185,7 +185,7 @@ def toptrack(text, nick, db, bot, notice):
     """Grabs a list of the top tracks for a last.fm username"""
     api_key = bot.config.get("api_keys", {}).get("lastfm")
     if not api_key:
-        return "error: no api key set"
+        return "Error: This command requires a LastFM API key."
 
     if text:
         username = get_account(text)
@@ -224,7 +224,7 @@ def topartists(text, nick, db, bot, notice):
     """Grabs a list of the top artists for a last.fm username. You can set your lastfm username with .l username"""
     api_key = bot.config.get("api_keys", {}).get("lastfm")
     if not api_key:
-        return "error: no api key set"
+        return "Error: This command requires a LastFM API key."
 
     if text:
         username = get_account(text)
@@ -262,7 +262,7 @@ def lastfm_track(text, nick, db, bot, notice):
     """Grabs a list of the top tracks for a last.fm username"""
     api_key = bot.config.get("api_keys", {}).get("lastfm")
     if not api_key:
-        return "error: no api key set"
+        return "Error: This command requires a LastFM API key."
     artist = ""
     track = ""
     if text:
@@ -325,7 +325,7 @@ def lastfm_artist(text, nick, db, bot, notice):
     """<artist> prints information about the specified artist"""
     api_key = bot.config.get("api_keys", {}).get("lastfm")
     if not api_key:
-        return "error: no api key set"
+        return "Error: This command requires a LastFM API key."
     artist = text
     params = ""
     if text:

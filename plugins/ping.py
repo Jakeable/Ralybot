@@ -1,7 +1,7 @@
 """
 ping.py
 
-Generates fun names using the textgen module.
+Pings a host or domain a number of times.
 
 Created By:
     - Bjorn Neergaard <https://github.com/neersighted>
@@ -17,7 +17,7 @@ import subprocess
 import re
 import os
 
-from cloudbot import hook
+from ralybot import hook
 
 unix_ping_regex = re.compile(r"(\d+.\d+)/(\d+.\d+)/(\d+.\d+)/(\d+.\d+)")
 win_ping_regex = re.compile(r"Minimum = (\d+)ms, Maximum = (\d+)ms, Average = (\d+)ms")

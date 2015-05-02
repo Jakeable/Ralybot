@@ -83,7 +83,7 @@
         "octopart": "",
         "wordnik": ""
     },
-    "database": "sqlite:///cloudbot.db",
+    "database": "sqlite:///ralybot.db",
     "plugin_loading": {
         "use_whitelist": false,
         "blacklist": [

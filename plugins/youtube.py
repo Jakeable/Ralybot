@@ -4,9 +4,9 @@ import time
 import isodate
 import requests
 
-from cloudbot import hook
-from cloudbot.util import timeformat
-from cloudbot.util.formatting import pluralize
+from ralybot import hook
+from ralybot.util import timeformat
+from ralybot.util.formatting import pluralize
 
 
 youtube_re = re.compile(r'(?:youtube.*?(?:v=|/v/)|youtu\.be/|yooouuutuuube.*?id=)([-_a-zA-Z0-9]+)', re.I)

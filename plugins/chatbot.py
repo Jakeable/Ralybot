@@ -1,7 +1,7 @@
 """
 chatbot.py
 
-Ask Cleverbot something via CloudBot! This one is way shorter!
+Ask Cleverbot something via Ralybot! This one is way shorter!
 
 Created By:
     - Foxlet <http://furcode.tk/>
@@ -17,7 +17,7 @@ import html
 
 import requests
 
-from cloudbot import hook
+from ralybot import hook
 
 
 SESSION = collections.OrderedDict()

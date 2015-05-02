@@ -7,8 +7,8 @@ import urllib.parse
 
 import requests
 
-from cloudbot import hook
-from cloudbot.util import timeformat, formatting
+from ralybot import hook
+from ralybot.util import timeformat, formatting
 
 
 reddit_re = re.compile(r'.*(((www\.)?reddit\.com/r|redd\.it)[^ ]+)', re.I)

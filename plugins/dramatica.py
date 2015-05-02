@@ -4,8 +4,8 @@ from lxml import html
 
 import requests
 
-from cloudbot import hook
-from cloudbot.util import formatting
+from ralybot import hook
+from ralybot.util import formatting
 
 api_url = "http://encyclopediadramatica.se/api.php"
 ed_url = "http://encyclopediadramatica.se/"

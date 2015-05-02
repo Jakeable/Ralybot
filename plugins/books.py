@@ -1,7 +1,7 @@
 import requests
 
-from cloudbot import hook
-from cloudbot.util import formatting, web
+from ralybot import hook
+from ralybot.util import formatting, web
 
 base_url = 'https://www.googleapis.com/books/v1/'
 book_search_api = base_url + 'volumes?'

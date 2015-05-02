@@ -5,7 +5,7 @@ from lxml import html
 
 import requests
 
-from cloudbot import hook
+from ralybot import hook
 
 @hook.command("e", "etymology")
 def etymology(text):

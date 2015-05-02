@@ -3,8 +3,8 @@ from urllib.parse import quote_plus
 import requests
 import requests.exceptions
 
-from cloudbot import hook
-from cloudbot.util import formatting
+from ralybot import hook
+from ralybot.util import formatting
 
 api_url = "http://api.fishbans.com/stats/{}/"
 

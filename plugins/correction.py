@@ -1,8 +1,8 @@
 import re
 
-from cloudbot import hook
+from ralybot import hook
 
-from cloudbot.util.formatting import ireplace
+from ralybot.util.formatting import ireplace
 
 correction_re = re.compile(r"^[sS]/(.*/.*(?:/[igx]{,4})?)\S*$")
 
@@ -11,17 +11,19 @@ correction_re = re.compile(r"^[sS]/(.*/.*(?:/[igx]{,4})?)\S*$")
 def correction(match, conn, chan, message):
     """
     :type match: re.__Match
-    :type conn: cloudbot.client.Client
+    :type conn: ralybot.client.Client
     :type chan: str
     """
     groups = [b.replace("\/", "/") for b in re.split(r"(?<!\\)/", match.groups()[0])]
     find = groups[0]
     replace = groups[1]
+    if find == replace:
+        return "Really dude? You want me to replace {} with {}?".format(find, replace)
 
     for item in conn.history[chan].__reversed__():
         nick, timestamp, msg = item
         if correction_re.match(msg):
-            # don't correct corrections, it gets really confusing
+            # Don't correct corrections, it just gets really confusing.
             continue
 
         if find.lower() in msg.lower():

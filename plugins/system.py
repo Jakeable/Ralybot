@@ -5,25 +5,26 @@ from datetime import timedelta
 
 import psutil
 
-from cloudbot import hook
-from cloudbot.util.filesize import size as format_bytes
-import cloudbot
+from ralybot import hook
+from ralybot.util.filesize import size as format_bytes
+import ralybot
 
 
 @hook.command(autohelp=False)
 def about(text, conn):
-    """-- Gives information about CloudBot. Use .about license for licensing information"""
-    if text.lower() in ("license", "gpl", "source", "src"):
-        return "Ralybot, a fork of CloudBot Refresh, is released under the GPL v3 license, get the source code " \
-               "at https://github.com/CloudBotIRC/CloudBot."
+    """-- Gives information about Ralybot. Use 'about license for information about the license and 'about source to get the source code for the bot."""
+    if text.lower() in ("license", "gpl"):
+        return "Ralybot is released under the GPL v3 license."
+    
+    if text.lower() in ("src", "source"):
+        return "Ralybot is open source! Get the source code at https://github.com/KamranMackey/Ralybot."
 
-    return "{} is a fork of CloudBot Refresh (https://github.com/CloudBotIRC/CloudBot), another awesome IRC bot written in the Python programming language. " \
-           "https://github.com/KamranMackey/Ralybot" .format(conn.nick)
+    return "{} is a simple, fast, extendable, and open source IRC bot coded in Python. ({})".format(conn.nick, ralybot.__version__)
 
 
 @hook.command(autohelp=False)
 def system():
-    """-- Retrieves information about the host system."""
+    """-- Retrieves information about the system running the bot."""
     process = psutil.Process(os.getpid())
 
     # get the data we need using the Process we got

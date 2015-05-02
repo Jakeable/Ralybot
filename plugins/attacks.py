@@ -5,9 +5,9 @@ import random
 import asyncio
 import re
 
-from cloudbot import hook
-from cloudbot.util import textgen
-from cloudbot.event import EventType
+from ralybot import hook
+from ralybot.util import textgen
+from ralybot.event import EventType
 
 nick_re = re.compile("^[A-Za-z0-9_|.\-\]\[\{\}]*$", re.I)
 
@@ -31,7 +31,7 @@ def is_self(conn, target):
 @hook.on_start()
 def load_attacks(bot):
     """
-    :type bot: cloudbot.bot.CloudBot
+    :type bot: ralybot.bot.Ralybot
     """
     global larts, flirts, kills, slaps, insults, wreck
 
@@ -162,7 +162,7 @@ def wreck(text, conn, nick, action):
 def insult(text, conn, nick, notice, message):
     """<user> - insults <user>
     :type text: str
-    :type conn: cloudbot.client.Client
+    :type conn: ralybot.client.Client
     :type nick: str
     """
     target = text.strip()

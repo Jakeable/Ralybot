@@ -2,8 +2,8 @@ import re
 
 import requests
 
-from cloudbot import hook
-from cloudbot.util import web
+from ralybot import hook
+from ralybot.util import web
 
 
 gateway = 'http://open.spotify.com/{}/{}'  # http spotify gw address

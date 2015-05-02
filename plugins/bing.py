@@ -3,8 +3,8 @@ import random
 import requests
 from lxml import html
 
-from cloudbot import hook
-from cloudbot.util import formatting, filesize, colors
+from ralybot import hook
+from ralybot.util import formatting, filesize, colors
 
 
 API_URL = "https://api.datamarket.azure.com/Bing/Search/v1/Composite"
@@ -25,13 +25,13 @@ def unescape(s):
 
 
 def bingify(s):
-    """ because bing has to be an asshole and require special params """
+    """ because Bing has to be a dick and require special params """
     return "'{}'".format(s)
 
 
 @hook.command("bing", "b")
 def bing(text, bot):
-    """<query> - returns the first bing search result for <query>"""
+    """<query> - returns the first Bing search result for <query>"""
     api_key = bot.config.get("api_keys", {}).get("bing_azure")
 
     # handle NSFW

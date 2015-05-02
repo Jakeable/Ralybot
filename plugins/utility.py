@@ -24,8 +24,8 @@ import urllib.parse
 import random
 import binascii
 
-from cloudbot import hook
-from cloudbot.util import formatting, web, colors
+from ralybot import hook
+from ralybot.util import formatting, web, colors
 
 
 COLORS = collections.OrderedDict([

@@ -3,7 +3,7 @@ import requests
 
 from lxml import etree
 
-from cloudbot import hook
+from ralybot import hook
 
 # security
 parser = etree.XMLParser(resolve_entities=False, no_network=True)

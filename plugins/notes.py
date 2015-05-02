@@ -4,8 +4,8 @@ from sqlalchemy import Table, Column, String, Boolean, Integer, DateTime, Primar
 import sqlalchemy
 from sqlalchemy.sql import select
 
-from cloudbot import hook
-from cloudbot.util import database
+from ralybot import hook
+from ralybot.util import database
 
 table = Table(
     'notes',

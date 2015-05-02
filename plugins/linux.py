@@ -1,7 +1,7 @@
 import re
 import requests
 
-from cloudbot import hook
+from ralybot import hook
 
 
 @hook.command(autohelp=False)

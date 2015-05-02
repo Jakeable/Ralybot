@@ -14,8 +14,8 @@ import json
 import requests
 import re
 
-from cloudbot import hook
-from cloudbot.util import formatting, web
+from ralybot import hook
+from ralybot.util import formatting, web
 
 
 # CONSTANTS

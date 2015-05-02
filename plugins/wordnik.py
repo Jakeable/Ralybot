@@ -4,8 +4,8 @@ import random
 import requests
 import urllib.parse
 
-from cloudbot import hook
-from cloudbot.util import web
+from ralybot import hook
+from ralybot.util import web
 
 
 API_URL = 'http://api.wordnik.com/v4/'
@@ -90,7 +90,7 @@ def pronounce(text):
 
     if json:
         out = "\x02{}\x02: ".format(word)
-        out += " â€¢ ".join([i['raw'] for i in json])
+        out += " • ".join([i['raw'] for i in json])
     else:
         return "Sorry, I don't know how to pronounce \x02{}\x02.".format(word)
 
@@ -127,7 +127,7 @@ def synonym(text):
 
     if json:
         out = "\x02{}\x02: ".format(word)
-        out += " â€¢ ".join(json[0]['words'])
+        out += " • ".join(json[0]['words'])
         return " ".join(out.split())
     else:
         return "Sorry, I couldn't find any synonyms for \x02{}\x02.".format(word)
@@ -151,7 +151,7 @@ def antonym(text):
 
     if json:
         out = "\x02{}\x02: ".format(word)
-        out += " â€¢ ".join(json[0]['words'])
+        out += " • ".join(json[0]['words'])
         out = out[:-2]
         return " ".join(out.split())
     else:

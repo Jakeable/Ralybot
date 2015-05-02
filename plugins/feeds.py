@@ -1,7 +1,7 @@
 import feedparser
 
-from cloudbot import hook
-from cloudbot.util import web, formatting
+from ralybot import hook
+from ralybot.util import web, formatting
 
 
 def format_item(item):
@@ -13,8 +13,8 @@ def format_item(item):
 
 @hook.command("feed", "rss", "news")
 def rss(text):
-    """<feed> -- Gets the first three items from the RSS/ATOM feed <feed>."""
-    limit = 3
+    """<feed> -- Gets the first five items from the RSS/ATOM feed <feed>."""
+    limit = 5
 
     t = text.lower().strip()
     if t == "xkcd":

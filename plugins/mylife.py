@@ -5,7 +5,7 @@ import functools
 from bs4 import BeautifulSoup
 import requests
 
-from cloudbot import hook
+from ralybot import hook
 
 fml_cache = []
 mlia_cache = []

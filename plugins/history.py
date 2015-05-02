@@ -3,9 +3,9 @@ import time
 import asyncio
 import re
 
-from cloudbot import hook
-from cloudbot.util import timeformat
-from cloudbot.event import EventType
+from ralybot import hook
+from ralybot.util import timeformat
+from ralybot.event import EventType
 
 db_ready = []
 
@@ -23,9 +23,9 @@ def db_init(db, conn_name):
 
 def track_seen(event, db, conn):
     """ Tracks messages for the .seen command
-    :type event: cloudbot.event.Event
+    :type event: ralybot.event.Event
     :type db: sqlalchemy.orm.Session
-    :type conn: cloudbot.client.Client
+    :type conn: ralybot.client.Client
     """
     db_init(db, conn)
     # keep private messages private
@@ -39,8 +39,8 @@ def track_seen(event, db, conn):
 
 def track_history(event, message_time, conn):
     """
-    :type event: cloudbot.event.Event
-    :type conn: cloudbot.client.Client
+    :type event: ralybot.event.Event
+    :type conn: ralybot.client.Client
     """
     try:
         history = conn.history[event.chan]
@@ -58,8 +58,8 @@ def track_history(event, message_time, conn):
 def chat_tracker(event, db, conn):
     """
     :type db: sqlalchemy.orm.Session
-    :type event: cloudbot.event.Event
-    :type conn: cloudbot.client.Client
+    :type event: ralybot.event.Event
+    :type conn: ralybot.client.Client
     """
     if event.type is EventType.action:
         event.content = "\x01ACTION {}\x01".format(event.content)
@@ -73,8 +73,8 @@ def chat_tracker(event, db, conn):
 @hook.command(autohelp=False)
 def resethistory(event, conn):
     """- resets chat history for the current channel
-    :type event: cloudbot.event.Event
-    :type conn: cloudbot.client.Client
+    :type event: ralybot.event.Event
+    :type conn: ralybot.client.Client
     """
     try:
         conn.history[event.chan].clear()
@@ -88,8 +88,8 @@ def resethistory(event, conn):
 def seen(text, nick, chan, db, event, conn):
     """<nick> <channel> - tells when a nickname was last in active in one of my channels
     :type db: sqlalchemy.orm.Session
-    :type event: cloudbot.event.Event
-    :type conn: cloudbot.client.Client
+    :type event: ralybot.event.Event
+    :type conn: ralybot.client.Client
     """
 
     if event.conn.nick.lower() == text.lower():

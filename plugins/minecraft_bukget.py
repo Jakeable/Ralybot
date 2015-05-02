@@ -3,8 +3,8 @@ import random
 
 import requests
 
-from cloudbot import hook
-from cloudbot.util import web, formatting
+from ralybot import hook
+from ralybot.util import web, formatting
 
 
 # # CONSTANTS

@@ -17,7 +17,7 @@ from datetime import datetime
 
 import requests
 
-from cloudbot import hook
+from ralybot import hook
 
 API_URL = "https://coinmarketcap-nexuist.rhcloud.com/api/{}"
 

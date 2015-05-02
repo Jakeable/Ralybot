@@ -2,7 +2,7 @@ from urllib.parse import quote_plus
 
 import requests
 
-from cloudbot import hook
+from ralybot import hook
 
 BASE_URL = "http://query.yahooapis.com/v1/public/yql"
 ENV = "http://datatables.org/alltables.env"

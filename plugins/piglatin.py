@@ -17,7 +17,7 @@ License:
 import string
 import nltk
 
-from cloudbot import hook
+from ralybot import hook
 
 pronunciations = None
 

@@ -18,8 +18,8 @@ import datetime
 import requests
 from lxml import html
 
-from cloudbot import hook
-from cloudbot.util import timeformat
+from ralybot import hook
+from ralybot.util import timeformat
 
 
 @hook.command("pre", "scene")

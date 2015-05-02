@@ -1,4 +1,4 @@
-from cloudbot import hook
+from ralybot import hook
 
 @hook.command
 def love(text, message):

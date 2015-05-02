@@ -1,6 +1,6 @@
 import asyncio
 
-from cloudbot import hook
+from ralybot import hook
 
 @asyncio.coroutine
 @hook.irc_raw('004')

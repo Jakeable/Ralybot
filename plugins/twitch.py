@@ -1,8 +1,8 @@
 import re
 import html
 
-from cloudbot import hook
-from cloudbot.util import http
+from ralybot import hook
+from ralybot.util import http
 
 
 twitch_re = re.compile(r'(.*:)//(twitch.tv|www.twitch.tv)(:[0-9]+)?(.*)', re.I)

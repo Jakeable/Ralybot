@@ -1,7 +1,7 @@
 from urllib.parse import unquote
 import re
 
-from cloudbot import hook
+from ralybot import hook
 
 
 spamurl = re.compile(r'.*(((www\.)?google\.com/url\?)[^ ]+)', re.I)

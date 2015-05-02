@@ -3,12 +3,12 @@ import logging
 
 from time import time
 
-from cloudbot import hook
-from cloudbot.util.tokenbucket import TokenBucket
+from ralybot import hook
+from ralybot.util.tokenbucket import TokenBucket
 
 ready = False
 buckets = {}
-logger = logging.getLogger("cloudbot")
+logger = logging.getLogger("ralybot")
 
 
 def task_clear(loop):
@@ -67,7 +67,7 @@ def sieve_suite(bot, event, _hook):
                 break
 
         if not allowed:
-            event.notice("Sorry, you are not allowed to use this command.")
+            event.notice("Sorry, but you are not allowed to use this command.")
             return None
 
     # check command spam tokens

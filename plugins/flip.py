@@ -1,49 +1,44 @@
-import random
-
-from cloudbot import hook
-from cloudbot.util import formatting
-
 replacements = {
-    'a': 'ɐ',
+    'a': '?',
     'b': 'q',
-    'c': 'ɔ',
+    'c': '?',
     'd': 'p',
-    'e': 'ǝ',
-    'f': 'ɟ',
-    'g': 'ƃ',
-    'h': 'ɥ',
-    'i': 'ᴉ',
-    'j': 'ɾ',
-    'k': 'ʞ',
-    'l': 'ן',
-    'm': 'ɯ',
+    'e': '?',
+    'f': '?',
+    'g': '?',
+    'h': '?',
+    'i': '?',
+    'j': '?',
+    'k': '?',
+    'l': '?',
+    'm': '?',
     'n': 'u',
     'o': 'o',
     'p': 'd',
     'q': 'b',
-    'r': 'ɹ',
+    'r': '?',
     's': 's',
-    't': 'ʇ',
+    't': '?',
     'u': 'n',
-    'v': 'ʌ',
-    'w': 'ʍ',
+    'v': '?',
+    'w': '?',
     'x': 'x',
-    'y': 'ʎ',
+    'y': '?',
     'z': 'z',
-    '?': '¿',
-    '.': '˙',
+    '?': '�',
+    '.': '?',
     ',': '\'',
     '(': ')',
     '<': '>',
     '[': ']',
     '{': '}',
     '\'': ',',
-    '_': '‾'}
+    '_': '?'}
 
 # append an inverted form of replacements to itself, so flipping works both ways
 replacements.update(dict((v, k) for k, v in replacements.items()))
 
-flippers = ["( ﾉ⊙︵⊙）ﾉ", "(╯°□°）╯", "( ﾉ♉︵♉ ）ﾉ"]
+flippers = ["( ????)?", "(?�?�)?", "( ???? )?"]
 
 
 @hook.command
@@ -54,8 +49,8 @@ def flip(text, reply):
 
 @hook.command(autohelp=False)
 def table(text, message):
-    """<text> -- (╯°□°）╯︵ <ʇxǝʇ>"""
+    """<text> -- (?�?�)?? <?x??>"""
     if text:
-        message(random.choice(flippers) + " ︵ " + formatting.multi_replace(text[::-1].lower(), replacements))
+        message(random.choice(flippers) + " ? " + formatting.multi_replace(text[::-1].lower(), replacements))
     else:
-        message(random.choice(flippers) + " ︵ ┻━┻")
+        message(random.choice(flippers) + " ? ???")
