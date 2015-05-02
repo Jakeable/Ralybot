@@ -1,4 +1,7 @@
 ## Changelog
+## 1.0.9
+This is an upcoming release.
+
 ### 1.0.8
 This update is pretty big. Be warned.
  * Improved flip command.
