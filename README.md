@@ -1,4 +1,7 @@
-# Ralybot [![Documentation Status](https://readthedocs.org/projects/ralybot/badge/?version=latest)](https://readthedocs.org/projects/ralybot/?badge=latest)
+# Ralybot 
+[![Documentation Status](https://readthedocs.org/projects/ralybot/badge/?version=latest)](https://readthedocs.org/projects/ralybot/?badge=latest) 
+[![Build Status](https://travis-ci.org/KamranMackey/Ralybot.svg?branch=python3.4)](https://travis-ci.org/KamranMackey/Ralybot) 
+[![Requirements Status](https://requires.io/github/KamranMackey/Ralybot/requirements.svg?branch=master)](https://requires.io/github/KamranMackey/Ralybot/requirements/?branch=master)
 
 Ralybot is a simple, fast, expandable and open-source Python IRC bot. Its documentation is on [Read The Docs](https://ralybot.readthedocs.org/en/latest/). I'd also like to mention that Ralybot now has its own Trello board set up. You can find the board [here](https://trello.com/b/olPXxniK/ralybot).
 
